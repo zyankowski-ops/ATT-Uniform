@@ -52,27 +52,28 @@
     }
 
 
-   /* =========================================================
-   IMAGE HEADER - COMPACT
-========================================================= */
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
-.image-header {
-  width: 100%;
-  height: 280px;
-  background: var(--navy);
-  border-bottom: 4px solid var(--yellow);
-  overflow: hidden;
-}
+    .image-header {
+      width: 100%;
+      height: 260px;
+      background: var(--navy);
+      border-bottom: 4px solid var(--yellow);
+      overflow: hidden;
+    }
 
-.image-header img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
+    .image-header img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
 
     /* =========================================================
-       MAIN INFOGRAPHIC AREA
+       MAIN INFOGRAPHIC
     ========================================================= */
 
     .poster-grid {
@@ -87,7 +88,13 @@
 
       padding: 10px 12px;
 
-      align-items: stretch;
+      /*
+        IMPORTANT:
+        Center instead of stretch.
+        This prevents the center image from being forced
+        to the height of the side columns.
+      */
+      align-items: center;
 
       background:
         linear-gradient(
@@ -105,7 +112,7 @@
 
 
     /* =========================================================
-       POLICY COLUMNS
+       SIDE COLUMNS
     ========================================================= */
 
     .column {
@@ -268,28 +275,43 @@
     .center-card {
       position: relative;
 
+      width: 100%;
+
       overflow: hidden;
 
       border: 4px solid var(--blue);
 
       border-radius: 18px;
 
-      background: #101820;
+      background: #000;
 
       box-shadow: 0 6px 16px rgba(0,0,0,.16);
+
+      /*
+        Do not allow the grid to stretch this box.
+      */
+      align-self: center;
     }
 
     .center-card img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+      /*
+        IMPORTANT:
+        Natural image aspect ratio.
+        No cover.
+        No contain.
+        No forced height.
+      */
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+    }
 
 
     /* =========================================================
-       BOTTOM AREA
+       BOTTOM ROW
     ========================================================= */
 
     .bottom-row {
@@ -432,7 +454,7 @@
 
 
     /* =========================================================
-       READY CHECK
+       10-SECOND READY CHECK
     ========================================================= */
 
     .ready-panel {
@@ -542,7 +564,7 @@
 
 
     /* =========================================================
-       MODAL
+       POPUP MODAL
     ========================================================= */
 
     .modal-bg {
@@ -669,6 +691,15 @@
 
     @media (max-width: 1000px) {
 
+      .image-header {
+        height: auto;
+      }
+
+      .image-header img {
+        height: auto;
+        object-fit: initial;
+      }
+
       .poster-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -677,7 +708,8 @@
         grid-column: 1 / -1;
         grid-row: 1;
 
-        max-height: 600px;
+        width: min(650px, 100%);
+        justify-self: center;
       }
 
       .bottom-row {
@@ -686,16 +718,19 @@
 
     }
 
+
     @media (max-width: 650px) {
 
       .poster-grid {
         grid-template-columns: 1fr;
+
         padding: 8px;
       }
 
       .center-card {
         grid-column: auto;
-        max-height: none;
+
+        width: 100%;
       }
 
       .bottom-row {
@@ -704,7 +739,9 @@
       }
 
       .phone-panel {
-        grid-template-columns: 62px 1fr;
+        grid-template-columns:
+          62px
+          1fr;
       }
 
       .phone-btn {
@@ -712,7 +749,8 @@
       }
 
       .ready-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
       .ready-item {
@@ -731,7 +769,7 @@
 
 
   <!-- =======================================================
-       HEADER IMAGE
+       HEADER
   ======================================================== -->
 
   <header class="image-header">
@@ -751,9 +789,9 @@
   <section class="poster-grid">
 
 
-    <!-- =======================
+    <!-- =====================================================
          LEFT COLUMN
-    ======================== -->
+    ====================================================== -->
 
     <div class="column">
 
@@ -929,23 +967,23 @@
     </div>
 
 
-    <!-- =======================
-         CENTER IMAGE
-    ======================== -->
+    <!-- =====================================================
+         CENTER GRAPHIC
+    ====================================================== -->
 
     <section class="center-card">
 
       <img
         src="shopcenter.png"
-        alt="RMCTC Automotive Technology students in proper uniform and PPE"
+        alt="RMCTC Automotive Technology students wearing proper uniform and PPE"
       >
 
     </section>
 
 
-    <!-- =======================
+    <!-- =====================================================
          RIGHT COLUMN
-    ======================== -->
+    ====================================================== -->
 
     <div class="column">
 
@@ -1165,7 +1203,7 @@
     </div>
 
 
-    <!-- 10 SECOND CHECK -->
+    <!-- SHOP READY CHECK -->
 
     <div class="ready-panel">
 
@@ -1310,7 +1348,7 @@
 
 
 <!-- =========================================================
-     POPUP MODAL
+     MODAL
 ========================================================= -->
 
 <div
@@ -1569,8 +1607,7 @@
 
   function openModal(topic) {
 
-    const data =
-      modalData[topic];
+    const data = modalData[topic];
 
     if (!data) return;
 
@@ -1592,6 +1629,7 @@
 
 
     modalBg.classList.add("open");
+
 
     modalBg.setAttribute(
       "aria-hidden",
@@ -1617,10 +1655,12 @@
 
     modalBg.classList.remove("open");
 
+
     modalBg.setAttribute(
       "aria-hidden",
       "true"
     );
+
 
     document.body.style.overflow =
       "";
@@ -1656,12 +1696,8 @@
     "click",
     event => {
 
-      if (
-        event.target === modalBg
-      ) {
-
+      if (event.target === modalBg) {
         closeModal();
-
       }
 
     }
@@ -1672,12 +1708,8 @@
     "keydown",
     event => {
 
-      if (
-        event.key === "Escape"
-      ) {
-
+      if (event.key === "Escape") {
         closeModal();
-
       }
 
     }
