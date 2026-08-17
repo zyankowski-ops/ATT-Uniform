@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RMCTC Automotive Technology - Shop Ready</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RMCTC Automotive Technology | Shop Ready</title>
 
   <style>
     :root {
-      --blue: #0f4f8f;
-      --blue-dark: #082f57;
-      --blue-light: #eaf3fb;
+      --blue: #0d4f8b;
+      --blue-dark: #072e52;
+      --blue-light: #eaf3fa;
       --yellow: #f4c542;
       --yellow-dark: #d9a900;
       --black: #111111;
-      --gray: #f4f4f4;
-      --gray-dark: #444;
+      --gray: #eef1f4;
+      --gray-dark: #4a4a4a;
       --white: #ffffff;
-      --green: #5aa832;
-      --red: #c9362b;
+      --green: #559b2d;
+      --red: #c7332b;
     }
 
     * {
@@ -30,474 +31,616 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ececec;
+      background: #e6e9ec;
       color: var(--black);
-      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     button {
       font: inherit;
     }
 
-    .page-shell {
-      width: min(1200px, 100%);
+    .page {
+      width: min(1180px, 100%);
       margin: 0 auto;
-      background: var(--white);
+      background: white;
       min-height: 100vh;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.12);
     }
 
+    /* -----------------------------
+       TOP BRAND BAR
+    ------------------------------ */
+
     .topbar {
-      background: linear-gradient(90deg, #07121f, #0d243f);
+      min-height: 44px;
+      background: #091624;
       color: white;
-      padding: 18px 26px;
+      padding: 8px 22px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+
+      gap: 12px;
+
+      font-size: 0.84rem;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
     }
 
-    .brand {
-      font-weight: 800;
-      letter-spacing: 1px;
-      font-size: 1.1rem;
-    }
-
-    .brand strong {
+    .topbar strong {
       color: var(--yellow);
     }
 
-    .shop-ready-hero {
-      padding: 28px 26px 18px;
+    /* -----------------------------
+       HERO
+    ------------------------------ */
+
+    .hero {
+      padding: 14px 20px 10px;
       text-align: center;
-      background:
-        linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.94)),
-        radial-gradient(circle at center, #e8eef4 0, #ffffff 70%);
-    }
 
-    .hero-title {
-      margin: 0;
-      font-size: clamp(2.6rem, 7vw, 5.8rem);
-      line-height: .95;
-      text-transform: uppercase;
-      font-weight: 950;
-      letter-spacing: -2px;
-    }
-
-    .hero-title .blue {
-      color: var(--blue);
-    }
-
-    .hero-strip {
-      margin: 22px auto 0;
-      max-width: 960px;
-      padding: 10px 18px;
-      background: var(--black);
-      color: white;
-      font-weight: 800;
-      font-style: italic;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 5px;
-      border-left: 12px solid var(--yellow);
-      border-right: 12px solid var(--yellow);
-    }
-
-    .hero-instruction {
-      margin: 16px auto 0;
-      font-weight: 700;
-      color: var(--gray-dark);
-    }
-
-    .uniform-layout {
-      display: grid;
-      grid-template-columns: 1fr minmax(260px, 360px) 1fr;
-      gap: 22px;
-      align-items: center;
-      padding: 28px 26px 20px;
       background:
         linear-gradient(rgba(255,255,255,.94), rgba(255,255,255,.94)),
         repeating-linear-gradient(
+          45deg,
+          #e7edf2 0,
+          #e7edf2 1px,
+          transparent 1px,
+          transparent 14px
+        );
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.95;
+
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      font-weight: 950;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+
+      margin-top: 10px;
+
+      padding: 6px 18px;
+
+      background: var(--black);
+      color: white;
+
+      border-left: 8px solid var(--yellow);
+      border-right: 8px solid var(--yellow);
+
+      border-radius: 4px;
+
+      font-size: 0.82rem;
+      font-weight: 900;
+      font-style: italic;
+
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* -----------------------------
+       INFOGRAPHIC AREA
+    ------------------------------ */
+
+    .infographic {
+      padding: 12px 18px 10px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(210px, 1fr)
+        minmax(230px, 300px)
+        minmax(210px, 1fr);
+
+      gap: 14px;
+
+      align-items: center;
+
+      background:
+        linear-gradient(rgba(255,255,255,.95), rgba(255,255,255,.95)),
+        repeating-linear-gradient(
           0deg,
-          #f3f5f6 0px,
-          #f3f5f6 1px,
+          #dfe5ea 0,
+          #dfe5ea 1px,
           transparent 1px,
           transparent 24px
         );
     }
 
-    .card-stack {
+    .card-column {
       display: grid;
-      gap: 18px;
+      gap: 10px;
     }
+
+    /* -----------------------------
+       REQUIREMENT CARDS
+    ------------------------------ */
 
     .uniform-card {
-      position: relative;
-      background: white;
-      border: 3px solid var(--blue);
-      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
+
+      border: 2px solid var(--blue);
+      border-radius: 12px;
+
+      background: white;
     }
 
-    .card-heading {
+    .card-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 13px 14px;
-      background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+
+      gap: 9px;
+
+      padding: 8px 10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
       color: white;
     }
 
     .card-icon {
-      font-size: 2.1rem;
-      width: 48px;
+      width: 34px;
+
       text-align: center;
+
+      font-size: 1.55rem;
     }
 
-    .card-title-group {
+    .card-heading {
       flex: 1;
     }
 
-    .card-title {
+    .card-heading h2 {
       margin: 0;
-      text-transform: uppercase;
-      font-size: 1.45rem;
+
+      font-size: 1.05rem;
       line-height: 1;
-      font-weight: 900;
+
+      font-weight: 950;
+      text-transform: uppercase;
     }
 
-    .card-subtitle {
-      font-size: .85rem;
+    .card-heading div {
+      margin-top: 2px;
+
+      font-size: 0.67rem;
+
       font-weight: 800;
+
       text-transform: uppercase;
-      opacity: .92;
-      margin-top: 4px;
+
+      opacity: 0.88;
     }
 
     .card-body {
-      padding: 16px 18px 18px;
+      padding: 8px 11px 6px;
+
+      font-size: 0.82rem;
+      line-height: 1.25;
     }
 
     .card-body ul {
       margin: 0;
-      padding-left: 22px;
+      padding-left: 17px;
     }
 
     .card-body li + li {
-      margin-top: 8px;
+      margin-top: 3px;
     }
 
-    .danger-text {
+    .danger {
       color: var(--red);
-      font-weight: 900;
+      font-weight: 850;
     }
+
+    /* -----------------------------
+       WHY BUTTON
+    ------------------------------ */
 
     .why-button {
-      width: calc(100% - 28px);
-      margin: 0 14px 14px;
-      padding: 10px 12px;
-      border: none;
-      border-radius: 10px;
+      width: calc(100% - 16px);
+
+      margin: 2px 8px 8px;
+
+      padding: 6px 8px;
+
+      border: 0;
+      border-radius: 7px;
+
       background: var(--blue-light);
       color: var(--blue-dark);
+
+      font-size: 0.72rem;
+
       font-weight: 900;
       text-transform: uppercase;
+
       cursor: pointer;
-      transition: .18s ease;
+
+      transition:
+        background 0.15s ease,
+        color 0.15s ease;
     }
 
     .why-button:hover,
     .why-button:focus {
       background: var(--yellow);
       color: var(--black);
-      transform: translateY(-1px);
-      outline: none;
     }
 
-    .student-panel {
-      min-height: 720px;
-      border-radius: 24px;
-      position: relative;
+    /* -----------------------------
+       CENTER STUDENT
+    ------------------------------ */
+
+    .student-area {
+      align-self: stretch;
+
+      min-height: 390px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 18px;
+      justify-content: flex-end;
+
+      padding: 12px 12px 8px;
+
+      border: 2px solid #c7d2dc;
+      border-radius: 16px;
+
       background:
-        radial-gradient(circle at 50% 45%, #ffffff 0, #edf2f6 58%, #dfe7ee 100%);
-      border: 3px solid #c7d3dd;
+        radial-gradient(
+          circle at 50% 45%,
+          white 0%,
+          #edf2f6 60%,
+          #dde6ed 100%
+        );
+
       overflow: hidden;
     }
 
-    .student-placeholder {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 0.54;
-      border-radius: 28px;
-      background:
-        linear-gradient(#1d568f 0 24%, #101820 24% 37%, #1e1f21 37% 79%, #171717 79% 100%);
+    /*
+      TEMPORARY CSS TECHNICIAN
+
+      We can replace this entire element later
+      with the final transparent PNG artwork.
+    */
+
+    .technician {
+      width: 175px;
+      height: 300px;
+
       position: relative;
-      box-shadow: 0 20px 25px rgba(0,0,0,.12);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 1rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 20px;
+
+      margin-top: 25px;
     }
 
-    .student-placeholder::before {
-      content: "";
+    .head {
+      width: 66px;
+      height: 74px;
+
       position: absolute;
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      background: #e0ad84;
-      top: -46px;
+
+      top: 0;
       left: 50%;
+
       transform: translateX(-50%);
-      border: 5px solid #2a241f;
+
+      border-radius: 45% 45% 48% 48%;
+
+      background: #ddb087;
+
+      border-top: 12px solid #3b3029;
+
+      z-index: 5;
     }
 
-    .student-caption {
-      margin-top: 18px;
-      text-align: center;
+    .glasses {
+      width: 70px;
+      height: 19px;
+
+      position: absolute;
+
+      top: 24px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      border: 4px solid #222;
+      border-radius: 7px;
+
+      background: rgba(220,240,250,.6);
+    }
+
+    .torso {
+      width: 150px;
+      height: 135px;
+
+      position: absolute;
+
+      top: 66px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      border-radius: 18px 18px 4px 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #245f94 0 33%,
+          #111820 33% 67%,
+          #245f94 67% 100%
+        );
+
+      border: 3px solid #0b131b;
+    }
+
+    .shirt-label {
+      position: absolute;
+
+      top: 108px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      color: white;
+
+      font-size: 0.65rem;
+
       font-weight: 900;
-      color: var(--blue-dark);
-      text-transform: uppercase;
-      font-size: 1.15rem;
+      letter-spacing: 0.5px;
     }
 
-    .phone-section {
-      margin: 10px 26px 22px;
-      border: 3px solid #151515;
-      border-radius: 18px;
-      background: linear-gradient(90deg, #ffd84c, #f6bd2c);
-      padding: 18px 20px;
+    .legs {
+      width: 112px;
+      height: 116px;
+
+      position: absolute;
+
+      top: 195px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          #1d2023 0 45%,
+          transparent 45% 55%,
+          #1d2023 55% 100%
+        );
+    }
+
+    .student-label {
+      width: 100%;
+
+      margin-top: 5px;
+
+      text-align: center;
+
+      color: var(--blue-dark);
+
+      font-size: 0.78rem;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .student-label span {
+      color: var(--green);
+    }
+
+    /* -----------------------------
+       PHONE BAR
+    ------------------------------ */
+
+    .phone-bar {
+      margin: 0 18px 8px;
+
+      min-height: 68px;
+
+      padding: 8px 12px;
+
       display: grid;
+
       grid-template-columns: auto 1fr auto;
-      gap: 20px;
       align-items: center;
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
+
+      gap: 12px;
+
+      border: 2px solid #171717;
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffd84f,
+          #f4bf2e
+        );
     }
 
     .phone-icon {
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
-    .phone-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
+    .phone-heading {
+      font-size: 1rem;
+
       font-weight: 950;
+
       text-transform: uppercase;
-      line-height: 1.05;
     }
 
-    .phone-title span {
-      display: block;
+    .phone-heading strong {
       color: var(--red);
     }
 
     .phone-copy {
+      margin-top: 2px;
+
+      font-size: 0.75rem;
+
       font-weight: 700;
     }
 
     .phone-button {
-      border: 2px solid #111;
+      padding: 7px 12px;
+
+      border: 0;
+      border-radius: 7px;
+
       background: #111;
       color: white;
-      padding: 12px 18px;
-      border-radius: 10px;
+
+      font-size: 0.72rem;
+
       font-weight: 900;
+
       text-transform: uppercase;
+
       cursor: pointer;
     }
 
     .phone-button:hover,
     .phone-button:focus {
-      background: white;
-      color: #111;
-      outline: none;
+      background: var(--blue-dark);
     }
 
-    .check-section {
-      margin: 0 26px 28px;
-      background: #101010;
+    /* -----------------------------
+       SHOP READY CHECK
+    ------------------------------ */
+
+    .ready-check {
+      margin: 0 18px 10px;
+
+      padding: 8px 12px;
+
+      background: #111;
       color: white;
-      border-radius: 20px;
-      padding: 18px;
-      border: 3px solid var(--blue);
+
+      border: 2px solid var(--blue);
+      border-radius: 11px;
     }
 
-    .check-title {
+    .ready-title {
+      margin-bottom: 6px;
+
       text-align: center;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      text-transform: uppercase;
+
+      font-size: 0.8rem;
+
       font-weight: 900;
-      margin-bottom: 16px;
+      text-transform: uppercase;
+
+      letter-spacing: 0.7px;
     }
 
-    .check-grid {
+    .ready-grid {
       display: grid;
+
       grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
+
+      gap: 4px;
     }
 
-    .check-item {
+    .ready-item {
+      padding: 4px;
+
       text-align: center;
-      padding: 12px 6px;
-      border-right: 1px solid #606060;
+
+      border-right: 1px solid #505050;
     }
 
-    .check-item:last-child {
-      border-right: none;
+    .ready-item:last-child {
+      border-right: 0;
     }
 
-    .check-emoji {
-      font-size: 2rem;
+    .ready-icon {
+      font-size: 1.2rem;
+    }
+
+    .ready-label {
       display: block;
-      margin-bottom: 5px;
-    }
 
-    .check-label {
-      display: block;
-      font-size: .78rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
+      margin-top: 1px;
 
-    .check-mark {
-      color: #8dd33f;
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 900;
-      margin-top: 3px;
-    }
+      font-size: 0.62rem;
 
-    .challenge {
-      padding: 28px 26px 36px;
-      background: #f4f7f9;
-      border-top: 5px solid var(--blue-dark);
-    }
-
-    .section-eyebrow {
-      color: var(--blue);
-      font-size: .85rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-
-    .challenge h2 {
-      text-align: center;
-      font-size: clamp(2rem, 5vw, 3rem);
-      text-transform: uppercase;
-      margin: 3px 0 8px;
-    }
-
-    .challenge-intro {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 24px;
-      color: #444;
-      font-weight: 600;
-    }
-
-    .challenge-board {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      border: 3px solid #c6d2dc;
-      padding: 22px;
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-    }
-
-    .violation-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .violation {
-      min-height: 118px;
-      border: 3px solid #c9d1d8;
-      border-radius: 14px;
-      background: #f9fafb;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px;
-      text-align: center;
       font-weight: 850;
-      transition: .18s ease;
+
+      text-transform: uppercase;
     }
 
-    .violation:hover,
-    .violation:focus {
-      transform: translateY(-2px);
-      border-color: var(--blue);
-      outline: none;
+    .ready-checkmark {
+      display: block;
+
+      color: #86cc48;
+
+      font-size: 0.85rem;
+
+      font-weight: 900;
     }
 
-    .violation .big {
-      font-size: 2.4rem;
-    }
-
-    .violation.correct {
-      background: #edf9e7;
-      border-color: var(--green);
-      color: #285d16;
-    }
-
-    .violation.wrong {
-      background: #fff0ef;
-      border-color: var(--red);
-      color: #8f1d15;
-    }
-
-    .challenge-status {
-      margin-top: 18px;
-      min-height: 72px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: #eef3f7;
-      font-weight: 800;
-      text-align: center;
-      display: grid;
-      place-items: center;
-    }
+    /* -----------------------------
+       FOOTER
+    ------------------------------ */
 
     .footer {
-      background: #07121f;
+      padding: 7px 16px;
+
+      background: #091624;
       color: white;
-      padding: 18px 26px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+
+      text-align: center;
+
+      font-size: 0.68rem;
+
+      font-weight: 850;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.6px;
     }
 
     .footer strong {
       color: var(--yellow);
     }
 
+    /* -----------------------------
+       MODAL
+    ------------------------------ */
+
     .modal-backdrop {
       position: fixed;
+
       inset: 0;
-      background: rgba(0,0,0,.62);
+
       display: none;
+
       align-items: center;
       justify-content: center;
-      padding: 20px;
+
+      padding: 18px;
+
+      background: rgba(0,0,0,.65);
+
       z-index: 9999;
     }
 
@@ -506,92 +649,118 @@
     }
 
     .modal {
-      width: min(560px, 100%);
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 22px 60px rgba(0,0,0,.35);
-      animation: modalIn .18s ease-out;
-    }
+      width: min(480px, 100%);
 
-    @keyframes modalIn {
-      from {
-        transform: scale(.96);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      overflow: hidden;
+
+      border-radius: 14px;
+
+      background: white;
     }
 
     .modal-header {
-      background: linear-gradient(90deg, var(--blue-dark), var(--blue));
-      color: white;
-      padding: 16px 18px;
+      padding: 12px 14px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      color: white;
     }
 
     .modal-header h3 {
       margin: 0;
+
+      font-size: 1.15rem;
+
       text-transform: uppercase;
-      font-size: 1.35rem;
     }
 
     .modal-close {
-      border: none;
+      border: 0;
+
       background: transparent;
       color: white;
-      font-size: 1.7rem;
+
+      font-size: 1.6rem;
+
       cursor: pointer;
     }
 
     .modal-content {
-      padding: 20px;
+      padding: 15px 16px;
+
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .modal-content h4 {
+      margin: 0 0 4px;
+
       color: var(--blue);
-      margin-bottom: 6px;
+
+      font-size: 0.78rem;
+
       text-transform: uppercase;
     }
 
     .modal-content p {
-      margin-top: 0;
+      margin: 0 0 12px;
     }
 
     .got-it {
       width: 100%;
-      margin-top: 8px;
-      border: none;
-      border-radius: 10px;
-      padding: 12px 14px;
+
+      padding: 9px;
+
+      border: 0;
+      border-radius: 8px;
+
       background: var(--yellow);
+      color: #111;
+
       font-weight: 900;
+
       text-transform: uppercase;
+
       cursor: pointer;
     }
 
-    @media (max-width: 900px) {
-      .uniform-layout {
-        grid-template-columns: 1fr;
+    /* -----------------------------
+       TABLET / MOBILE
+    ------------------------------ */
+
+    @media (max-width: 820px) {
+
+      .infographic {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .student-panel {
-        min-height: auto;
-        padding-top: 70px;
-        padding-bottom: 30px;
-        order: -1;
+      .student-area {
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        min-height: 300px;
       }
 
-      .student-placeholder {
-        max-width: 250px;
+      .technician {
+        transform: scale(.85);
+        transform-origin: bottom center;
+
+        margin-top: -20px;
+        margin-bottom: -20px;
       }
 
-      .phone-section {
+      .phone-bar {
         grid-template-columns: auto 1fr;
       }
 
@@ -599,646 +768,1013 @@
         grid-column: 1 / -1;
       }
 
-      .check-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .check-item:nth-child(3) {
-        border-right: none;
-      }
-
-      .violation-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 560px) {
-      .shop-ready-hero,
-      .uniform-layout,
-      .challenge {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
 
-      .phone-section,
-      .check-section {
-        margin-left: 14px;
-        margin-right: 14px;
-      }
-
-      .phone-section {
-        grid-template-columns: 1fr;
+      .topbar {
+        justify-content: center;
         text-align: center;
       }
 
-      .check-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .topbar div:last-child {
+        display: none;
       }
 
-      .check-item {
-        border-right: none;
-        border-bottom: 1px solid #555;
+      .hero {
+        padding-top: 12px;
       }
 
-      .check-item:nth-last-child(-n+2) {
-        border-bottom: none;
-      }
+      .infographic {
+        padding-left: 10px;
+        padding-right: 10px;
 
-      .violation-grid {
         grid-template-columns: 1fr;
       }
+
+      .student-area {
+        grid-column: auto;
+
+        min-height: 280px;
+      }
+
+      .phone-bar,
+      .ready-check {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .phone-bar {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+      }
+
+      .ready-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ready-item {
+        border-right: 0;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <main class="page-shell">
+<main class="page">
 
-    <header class="topbar">
-      <div class="brand">
-        <strong>RMCTC</strong> AUTOMOTIVE TECHNOLOGY
-      </div>
+  <!-- =============================
+       BRAND BAR
+  ============================== -->
 
-      <div>
-        Uniform & Shop Readiness
-      </div>
-    </header>
+  <div class="topbar">
 
+    <div>
+      <strong>RMCTC</strong> Automotive Technology
+    </div>
 
-    <section class="shop-ready-hero">
-
-      <h1 class="hero-title">
-        Are You <span class="blue">Shop Ready?</span>
-      </h1>
-
-      <div class="hero-strip">
-        Every Day. Before You Enter the Shop.
-      </div>
-
-      <p class="hero-instruction">
-        Review each requirement. Select <strong>Why It Matters</strong> to learn the reason behind the rule.
-      </p>
-
-    </section>
-
-
-    <section class="uniform-layout">
-
-      <div class="card-stack">
-
-        <article class="uniform-card">
-
-          <div class="card-heading">
-            <div class="card-icon">🥽</div>
-
-            <div class="card-title-group">
-              <h2 class="card-title">Eyes</h2>
-              <div class="card-subtitle">Safety Glasses</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <ul>
-              <li>Clear lens safety glasses must be <strong>ANSI Z87 approved</strong>.</li>
-              <li>Prescription glasses require approved side shields.</li>
-              <li>Safety goggles may also be worn.</li>
-            </ul>
-          </div>
-
-          <button class="why-button" data-topic="glasses">
-            Why It Matters
-          </button>
-
-        </article>
-
-
-        <article class="uniform-card">
-
-          <div class="card-heading">
-            <div class="card-icon">🥾</div>
-
-            <div class="card-title-group">
-              <h2 class="card-title">Feet</h2>
-              <div class="card-subtitle">Work Boots</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <ul>
-              <li>Steel or composite reinforced toe.</li>
-              <li>Slip resistant.</li>
-              <li>Black or dark brown in color.</li>
-            </ul>
-          </div>
-
-          <button class="why-button" data-topic="boots">
-            Why It Matters
-          </button>
-
-        </article>
-
-
-        <article class="uniform-card">
-
-          <div class="card-heading">
-            <div class="card-icon">💍</div>
-
-            <div class="card-title-group">
-              <h2 class="card-title">Jewelry</h2>
-              <div class="card-subtitle">Leave It Off</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <ul>
-              <li>No necklaces, rings, bracelets, or large piercings.</li>
-            </ul>
-          </div>
-
-          <button class="why-button" data-topic="jewelry">
-            Why It Matters
-          </button>
-
-        </article>
-
-      </div>
-
-
-      <div class="student-panel">
-
-        <div class="student-placeholder">
-          Replace this placeholder later with the final RMCTC student artwork.
-        </div>
-
-        <div class="student-caption">
-          Proper Uniform = Shop Ready
-        </div>
-
-      </div>
-
-
-      <div class="card-stack">
-
-        <article class="uniform-card">
-
-          <div class="card-heading">
-            <div class="card-icon">👕</div>
-
-            <div class="card-title-group">
-              <h2 class="card-title">Shirt</h2>
-              <div class="card-subtitle">RMCTC Work Shirt</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <ul>
-              <li>RMCTC-provided work shirt.</li>
-              <li>RMCTC or automotive-manufacturer logos only.</li>
-              <li class="danger-text">No hoodies, hats, or bandanas.</li>
-            </ul>
-          </div>
-
-          <button class="why-button" data-topic="shirt">
-            Why It Matters
-          </button>
-
-        </article>
-
-
-        <article class="uniform-card">
-
-          <div class="card-heading">
-            <div class="card-icon">👖</div>
-
-            <div class="card-title-group">
-              <h2 class="card-title">Pants</h2>
-              <div class="card-subtitle">Work Pants</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <ul>
-              <li>Blue or black work pants.</li>
-            </ul>
-          </div>
-
-          <button class="why-button" data-topic="pants">
-            Why It Matters
-          </button>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <section class="phone-section">
-
-      <div class="phone-icon">📵</div>
-
-      <div>
-        <div class="phone-title">
-          One More Thing: Your Phone
-          <span>Put It Away.</span>
-        </div>
-
-        <div class="phone-copy">
-          Phones are not part of your uniform and may only be used with instructor permission.
-        </div>
-      </div>
-
-      <button class="phone-button" data-topic="phone">
-        Why?
-      </button>
-
-    </section>
-
-
-    <section class="check-section">
-
-      <div class="check-title">
-        The 10-Second Shop-Ready Check
-      </div>
-
-      <div class="check-grid">
-
-        <div class="check-item">
-          <span class="check-emoji">🥽</span>
-          <span class="check-label">Glasses</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-        <div class="check-item">
-          <span class="check-emoji">👕</span>
-          <span class="check-label">Shirt</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-        <div class="check-item">
-          <span class="check-emoji">👖</span>
-          <span class="check-label">Pants</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-        <div class="check-item">
-          <span class="check-emoji">🥾</span>
-          <span class="check-label">Boots</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-        <div class="check-item">
-          <span class="check-emoji">💍</span>
-          <span class="check-label">Jewelry Off</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-        <div class="check-item">
-          <span class="check-emoji">📵</span>
-          <span class="check-label">Phone Away</span>
-          <span class="check-mark">✓</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="challenge">
-
-      <div class="section-eyebrow">
-        Quick Challenge
-      </div>
-
-      <h2>Can You Spot What's Wrong?</h2>
-
-      <p class="challenge-intro">
-        A student is getting ready to enter the shop. Select the items that would make the student
-        <strong>NOT shop ready</strong>. Find all three problems.
-      </p>
-
-
-      <div class="challenge-board">
-
-        <div class="violation-grid">
-
-          <button class="violation" data-answer="correct">
-            <span class="big">🥽</span>
-            Missing Safety Glasses
-          </button>
-
-          <button class="violation" data-answer="correct">
-            <span class="big">🧥</span>
-            Hoodie
-          </button>
-
-          <button class="violation" data-answer="safe">
-            <span class="big">👖</span>
-            Black Work Pants
-          </button>
-
-          <button class="violation" data-answer="correct">
-            <span class="big">💍</span>
-            Necklace
-          </button>
-
-          <button class="violation" data-answer="safe">
-            <span class="big">🥾</span>
-            Approved Work Boots
-          </button>
-
-        </div>
-
-
-        <div class="challenge-status" id="challengeStatus">
-          Find all three uniform problems.
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <footer class="footer">
-
-      <div>
-        <strong>BE PREPARED.</strong> BE PROFESSIONAL. BE SHOP READY.
-      </div>
-
-      <div>
-        Ready for the real world.
-      </div>
-
-    </footer>
-
-  </main>
-
-
-  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
-
-    <div class="modal" role="dialog" aria-modal="true">
-
-      <div class="modal-header">
-        <h3 id="modalTitle">Why It Matters</h3>
-
-        <button class="modal-close" id="modalClose" aria-label="Close">
-          ×
-        </button>
-      </div>
-
-      <div class="modal-content" id="modalContent"></div>
-
+    <div>
+      Uniform & Shop Readiness
     </div>
 
   </div>
 
 
-  <script>
+  <!-- =============================
+       HERO
+  ============================== -->
 
-    const modalData = {
+  <section class="hero">
 
-      glasses: {
-        title: "Why Safety Glasses Matter",
-        content: `
-          <h4>Protect Your Eyes</h4>
-          <p>
-            Automotive work can expose you to metal fragments, dust, chemicals,
-            pressurized fluids, sparks, and debris.
-          </p>
+    <h1>
+      Are You <span>Shop Ready?</span>
+    </h1>
 
-          <h4>Shop Expectation</h4>
-          <p>
-            Eye protection must be worn whenever required. Approved safety glasses
-            are part of being prepared before work begins.
-          </p>
-        `
-      },
+    <div class="hero-subtitle">
+      Every Day. Before You Enter the Shop.
+    </div>
 
-      shirt: {
-        title: "Why the Work Shirt Matters",
-        content: `
-          <h4>Professional Appearance</h4>
-          <p>
-            Your RMCTC work shirt identifies you as part of the Automotive Technology
-            program and helps establish the same professional habits expected in industry.
-          </p>
-
-          <h4>Shop Safety</h4>
-          <p>
-            Appropriate work clothing is easier to manage around tools, equipment,
-            moving components, and vehicles than loose or inappropriate garments.
-          </p>
-        `
-      },
-
-      pants: {
-        title: "Why Work Pants Matter",
-        content: `
-          <h4>Built for Work</h4>
-          <p>
-            Work pants provide better durability and coverage for automotive shop activities
-            than casual clothing.
-          </p>
-
-          <h4>Professional Expectation</h4>
-          <p>
-            A consistent uniform reinforces the expectation that the shop is a workplace,
-            not simply another classroom.
-          </p>
-        `
-      },
-
-      boots: {
-        title: "Why Work Boots Matter",
-        content: `
-          <h4>Foot Protection</h4>
-          <p>
-            Automotive technicians work around wheels, brake components, tools,
-            equipment, and other heavy objects that can be dropped.
-          </p>
-
-          <h4>Traction</h4>
-          <p>
-            Shop floors can become slippery from water, oil, coolant, or other fluids.
-            Slip-resistant footwear helps reduce the chance of falls.
-          </p>
-        `
-      },
-
-      jewelry: {
-        title: "Why Jewelry Stays Off",
-        content: `
-          <h4>Entanglement Hazard</h4>
-          <p>
-            Necklaces, bracelets, rings, and other jewelry can become caught in rotating
-            tools, belts, pulleys, fans, and equipment.
-          </p>
-
-          <h4>Electrical Hazard</h4>
-          <p>
-            Metal jewelry can also conduct electricity and create an additional hazard
-            while working around electrical systems.
-          </p>
-        `
-      },
-
-      phone: {
-        title: "Why Your Phone Stays Away",
-        content: `
-          <h4>Your Attention Matters</h4>
-          <p>
-            You are working around vehicles, lifts, tools, moving equipment, and other people.
-            Your attention needs to remain on the work taking place around you.
-          </p>
-
-          <h4>Professional Expectation</h4>
-          <p>
-            Unless your instructor has authorized its use for class or shop work,
-            your phone stays away.
-          </p>
-        `
-      }
-
-    };
+  </section>
 
 
-    const modalBackdrop = document.getElementById("modalBackdrop");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalContent = document.getElementById("modalContent");
-    const modalClose = document.getElementById("modalClose");
+  <!-- =============================
+       MAIN INFOGRAPHIC
+  ============================== -->
+
+  <section class="infographic">
 
 
-    function openModal(topic) {
+    <!-- LEFT COLUMN -->
 
-      const data = modalData[topic];
+    <div class="card-column">
 
-      if (!data) return;
 
-      modalTitle.textContent = data.title;
+      <!-- SAFETY GLASSES -->
 
-      modalContent.innerHTML =
-        data.content +
-        `<button class="got-it" id="gotItButton">Got It ✓</button>`;
+      <article class="uniform-card">
 
-      modalBackdrop.classList.add("open");
-      modalBackdrop.setAttribute("aria-hidden", "false");
+        <div class="card-header">
 
-      document.body.style.overflow = "hidden";
+          <div class="card-icon">
+            🥽
+          </div>
 
-      document.getElementById("gotItButton").addEventListener("click", closeModal);
+          <div class="card-heading">
+
+            <h2>Eyes</h2>
+
+            <div>
+              Safety Glasses
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              Clear <strong>ANSI Z87-approved</strong>
+              safety glasses.
+            </li>
+
+            <li>
+              Prescription glasses require approved
+              side shields.
+            </li>
+
+            <li>
+              Safety goggles are acceptable.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="glasses"
+        >
+          Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- SAFETY FOOTWEAR -->
+
+      <article class="uniform-card">
+
+        <div class="card-header">
+
+          <div class="card-icon">
+            👟
+          </div>
+
+          <div class="card-heading">
+
+            <h2>Feet</h2>
+
+            <div>
+              Safety Footwear
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              Steel or composite safety toe.
+            </li>
+
+            <li>
+              Oil and slip-resistant sole.
+            </li>
+
+            <li>
+              Black or dark brown.
+            </li>
+
+            <li>
+              Work shoe or work boot style.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="footwear"
+        >
+          Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- JEWELRY -->
+
+      <article class="uniform-card">
+
+        <div class="card-header">
+
+          <div class="card-icon">
+            💍
+          </div>
+
+          <div class="card-heading">
+
+            <h2>Jewelry</h2>
+
+            <div>
+              Leave It Off
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              No necklaces, rings, bracelets,
+              or large piercings.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="jewelry"
+        >
+          Why It Matters
+        </button>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- CENTER TECHNICIAN -->
+
+    <div class="student-area">
+
+      <div class="technician">
+
+        <div class="head">
+
+          <div class="glasses"></div>
+
+        </div>
+
+        <div class="torso"></div>
+
+        <div class="shirt-label">
+          RMCTC
+        </div>
+
+        <div class="legs"></div>
+
+      </div>
+
+
+      <div class="student-label">
+
+        Proper Uniform =
+        <span>Shop Ready ✓</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT COLUMN -->
+
+    <div class="card-column">
+
+
+      <!-- SHIRT -->
+
+      <article class="uniform-card">
+
+        <div class="card-header">
+
+          <div class="card-icon">
+            👕
+          </div>
+
+          <div class="card-heading">
+
+            <h2>Shirt</h2>
+
+            <div>
+              RMCTC Work Shirt
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              RMCTC-provided work shirt.
+            </li>
+
+            <li>
+              RMCTC or automotive-manufacturer
+              logos only.
+            </li>
+
+            <li class="danger">
+              No hoodies or bandanas.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="shirt"
+        >
+          Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- PANTS -->
+
+      <article class="uniform-card">
+
+        <div class="card-header">
+
+          <div class="card-icon">
+            👖
+          </div>
+
+          <div class="card-heading">
+
+            <h2>Pants</h2>
+
+            <div>
+              Work Pants
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              Blue or black work pants.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="pants"
+        >
+          Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- HAT -->
+
+      <article class="uniform-card">
+
+        <div class="card-header">
+
+          <div class="card-icon">
+            🧢
+          </div>
+
+          <div class="card-heading">
+
+            <h2>Hats</h2>
+
+            <div>
+              Permitted
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          Hats are permitted unless they interfere
+          with required PPE or create a shop-safety hazard.
+
+        </div>
+
+
+        <button
+          class="why-button"
+          data-topic="hats"
+        >
+          Shop Expectation
+        </button>
+
+      </article>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =============================
+       PHONE
+  ============================== -->
+
+  <section class="phone-bar">
+
+    <div class="phone-icon">
+      📵
+    </div>
+
+
+    <div>
+
+      <div class="phone-heading">
+
+        Your Phone:
+        <strong>Put It Away.</strong>
+
+      </div>
+
+
+      <div class="phone-copy">
+
+        Phones may only be used when authorized
+        by your instructor.
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="phone-button"
+      data-topic="phone"
+    >
+      Why?
+    </button>
+
+  </section>
+
+
+  <!-- =============================
+       QUICK CHECK
+  ============================== -->
+
+  <section class="ready-check">
+
+    <div class="ready-title">
+      10-Second Shop-Ready Check
+    </div>
+
+
+    <div class="ready-grid">
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          🥽
+        </span>
+
+        <span class="ready-label">
+          Glasses
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          👕
+        </span>
+
+        <span class="ready-label">
+          Shirt
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          👖
+        </span>
+
+        <span class="ready-label">
+          Pants
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          👟
+        </span>
+
+        <span class="ready-label">
+          Safety Shoes
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          💍
+        </span>
+
+        <span class="ready-label">
+          Jewelry Off
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+      <div class="ready-item">
+
+        <span class="ready-icon">
+          📵
+        </span>
+
+        <span class="ready-label">
+          Phone Away
+        </span>
+
+        <span class="ready-checkmark">
+          ✓
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =============================
+       FOOTER
+  ============================== -->
+
+  <footer class="footer">
+
+    <strong>Be Prepared.</strong>
+    Be Professional.
+    Be Shop Ready.
+
+  </footer>
+
+
+</main>
+
+
+<!-- =============================
+     MODAL
+============================== -->
+
+<div
+  class="modal-backdrop"
+  id="modalBackdrop"
+  aria-hidden="true"
+>
+
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+  >
+
+    <div class="modal-header">
+
+      <h3 id="modalTitle">
+        Why It Matters
+      </h3>
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="modal-content"
+      id="modalContent"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  const modalData = {
+
+
+    glasses: {
+
+      title: "Why Safety Glasses Matter",
+
+      content: `
+
+        <h4>Protect Your Eyes</h4>
+
+        <p>
+          Automotive work can expose your eyes to
+          metal fragments, dust, chemicals, sparks,
+          pressurized fluids, and flying debris.
+        </p>
+
+        <h4>Shop Expectation</h4>
+
+        <p>
+          Approved eye protection must be worn whenever
+          required. Being shop ready means having your
+          eye protection before work begins.
+        </p>
+
+      `
+
+    },
+
+
+    shirt: {
+
+      title: "Why the Work Shirt Matters",
+
+      content: `
+
+        <h4>Professional Appearance</h4>
+
+        <p>
+          Your RMCTC work shirt identifies you as part
+          of the Automotive Technology program and
+          reinforces the professional appearance
+          expected in the automotive industry.
+        </p>
+
+        <h4>Shop Expectation</h4>
+
+        <p>
+          Hoodies and bandanas are not permitted as
+          part of the shop uniform.
+        </p>
+
+      `
+
+    },
+
+
+    pants: {
+
+      title: "Why Work Pants Matter",
+
+      content: `
+
+        <h4>Made for the Work Environment</h4>
+
+        <p>
+          Work pants provide the durability and coverage
+          needed for automotive shop activities.
+        </p>
+
+        <h4>Professional Expectation</h4>
+
+        <p>
+          Blue or black work pants help maintain a
+          consistent professional shop uniform.
+        </p>
+
+      `
+
+    },
+
+
+    footwear: {
+
+      title: "Why Safety Footwear Matters",
+
+      content: `
+
+        <h4>Protect Your Feet</h4>
+
+        <p>
+          Technicians work around wheels, brake
+          components, tools, equipment, and other
+          heavy objects that can fall or be dropped.
+        </p>
+
+        <h4>Stay on Your Feet</h4>
+
+        <p>
+          Oil, coolant, water, and other fluids can make
+          shop floors slippery. Proper oil and
+          slip-resistant footwear improves traction.
+        </p>
+
+        <h4>Automotive Style</h4>
+
+        <p>
+          Safety footwear can be a work shoe or boot.
+          The goal is professional automotive footwear,
+          not a heavy construction-style boot.
+        </p>
+
+      `
+
+    },
+
+
+    jewelry: {
+
+      title: "Why Jewelry Stays Off",
+
+      content: `
+
+        <h4>Entanglement Hazard</h4>
+
+        <p>
+          Rings, necklaces, bracelets, and other jewelry
+          can become caught in tools, belts, fans,
+          pulleys, and rotating equipment.
+        </p>
+
+        <h4>Electrical Hazard</h4>
+
+        <p>
+          Metal jewelry can also conduct electricity
+          and increase the risk of burns or electrical
+          injury while working on vehicle systems.
+        </p>
+
+      `
+
+    },
+
+
+    hats: {
+
+      title: "Hat Expectations",
+
+      content: `
+
+        <h4>Hats Are Permitted</h4>
+
+        <p>
+          Hats may be worn in Automotive Technology.
+        </p>
+
+        <h4>Safety Comes First</h4>
+
+        <p>
+          A hat must never interfere with required
+          eye protection, other PPE, visibility,
+          or safe work around vehicles and equipment.
+        </p>
+
+      `
+
+    },
+
+
+    phone: {
+
+      title: "Why Your Phone Stays Away",
+
+      content: `
+
+        <h4>Your Attention Matters</h4>
+
+        <p>
+          You are working around vehicles, lifts,
+          tools, moving equipment, and other people.
+          Your attention needs to remain on the work
+          happening around you.
+        </p>
+
+        <h4>Professional Expectation</h4>
+
+        <p>
+          Unless your instructor authorizes its use
+          for a class or shop activity, your phone
+          stays put away.
+        </p>
+
+      `
+
     }
 
+  };
 
-    function closeModal() {
 
-      modalBackdrop.classList.remove("open");
-      modalBackdrop.setAttribute("aria-hidden", "true");
+  const modalBackdrop =
+    document.getElementById("modalBackdrop");
 
-      document.body.style.overflow = "";
+  const modalTitle =
+    document.getElementById("modalTitle");
+
+  const modalContent =
+    document.getElementById("modalContent");
+
+  const modalClose =
+    document.getElementById("modalClose");
+
+
+  function openModal(topic) {
+
+    const data = modalData[topic];
+
+    if (!data) return;
+
+
+    modalTitle.textContent =
+      data.title;
+
+
+    modalContent.innerHTML =
+
+      data.content +
+
+      `
+        <button
+          class="got-it"
+          id="gotItButton"
+        >
+          Got It ✓
+        </button>
+      `;
+
+
+    modalBackdrop.classList.add("open");
+
+    modalBackdrop.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+
+    document
+      .getElementById("gotItButton")
+      .addEventListener(
+        "click",
+        closeModal
+      );
+
+  }
+
+
+  function closeModal() {
+
+    modalBackdrop.classList.remove("open");
+
+    modalBackdrop.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  document
+    .querySelectorAll("[data-topic]")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          openModal(
+            button.dataset.topic
+          );
+
+        }
+      );
+
+    });
+
+
+  modalClose.addEventListener(
+    "click",
+    closeModal
+  );
+
+
+  modalBackdrop.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target === modalBackdrop
+      ) {
+
+        closeModal();
+
+      }
 
     }
+  );
 
 
-    document.querySelectorAll("[data-topic]").forEach(button => {
+  document.addEventListener(
+    "keydown",
+    event => {
 
-      button.addEventListener("click", () => {
+      if (
+        event.key === "Escape"
+      ) {
 
-        openModal(button.dataset.topic);
-
-      });
-
-    });
-
-
-    modalClose.addEventListener("click", closeModal);
-
-
-    modalBackdrop.addEventListener("click", event => {
-
-      if (event.target === modalBackdrop) {
         closeModal();
+
       }
 
-    });
+    }
+  );
 
-
-    document.addEventListener("keydown", event => {
-
-      if (event.key === "Escape") {
-        closeModal();
-      }
-
-    });
-
-
-    let correctFound = 0;
-
-    const status = document.getElementById("challengeStatus");
-
-
-    document.querySelectorAll(".violation").forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        if (
-          button.classList.contains("correct") ||
-          button.classList.contains("wrong")
-        ) {
-          return;
-        }
-
-
-        if (button.dataset.answer === "correct") {
-
-          button.classList.add("correct");
-
-          correctFound++;
-
-          if (correctFound === 3) {
-
-            status.innerHTML = `
-              <div>
-                <div style="font-size:2rem;">✅</div>
-                <strong>SHOP READY KNOWLEDGE CHECK COMPLETE!</strong><br>
-                You found all three problems.
-              </div>
-            `;
-
-          } else {
-
-            status.textContent =
-              `${correctFound} of 3 problems found. Keep looking.`;
-
-          }
-
-        } else {
-
-          button.classList.add("wrong");
-
-          status.innerHTML =
-            `<strong>That item is shop ready.</strong><br>Try another choice.`;
-
-          setTimeout(() => {
-
-            button.classList.remove("wrong");
-
-            if (correctFound < 3) {
-
-              status.textContent =
-                `${correctFound} of 3 problems found. Keep looking.`;
-
-            }
-
-          }, 1200);
-
-        }
-
-      });
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>
