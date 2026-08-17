@@ -76,40 +76,31 @@
        MAIN INFOGRAPHIC
     ========================================================= */
 
-    .poster-grid {
-      display: grid;
+ .poster-grid {
+  display: grid;
 
-      grid-template-columns:
-        minmax(255px, 1fr)
-        minmax(420px, 1.55fr)
-        minmax(255px, 1fr);
+  grid-template-columns:
+    minmax(255px, 1fr)
+    minmax(420px, 1.55fr)
+    minmax(255px, 1fr);
 
-      gap: 12px;
+  gap: 12px;
 
-      padding: 10px 12px;
+  padding: 10px 12px;
 
-      /*
-        IMPORTANT:
-        Center instead of stretch.
-        This prevents the center image from being forced
-        to the height of the side columns.
-      */
-      align-items: center;
+  align-items: start;
+}
 
-      background:
-        linear-gradient(
-          rgba(255,255,255,.94),
-          rgba(255,255,255,.94)
-        ),
-        repeating-linear-gradient(
-          45deg,
-          #dfe7ed 0,
-          #dfe7ed 1px,
-          transparent 1px,
-          transparent 16px
-        );
-    }
+.column {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
 
+.center-card {
+  align-self: start;
+  width: 100%;
+}
 
     /* =========================================================
        SIDE COLUMNS
