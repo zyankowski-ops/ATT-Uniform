@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>RMCTC Automotive Technology | Shop Ready</title>
 
   <style>
     :root {
-      --navy: #071523;
-      --navy-2: #0b2e52;
-      --blue: #0d4f8b;
-      --blue-bright: #1764ad;
-      --yellow: #f4c542;
-      --yellow-dark: #d7a500;
+      --navy: #061625;
+      --navy2: #082b4d;
+      --blue: #0b4f8c;
+      --blue2: #1465ad;
+      --yellow: #f7c63c;
+      --yellow2: #dba800;
       --white: #ffffff;
       --black: #101010;
-      --gray: #eef2f5;
-      --gray-2: #d8e0e6;
-      --text: #17202a;
-      --red: #d02c24;
-      --green: #5aa832;
+      --gray: #eef3f6;
+      --red: #d92b23;
+      --green: #66aa35;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html,
+    body {
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #dfe4e8;
-      color: var(--text);
+      background: #dfe5e9;
+      color: #17212b;
     }
 
     button {
@@ -43,812 +42,991 @@
     }
 
     .page {
-      width: min(1400px, 100%);
+      width: min(1500px, 100%);
       margin: 0 auto;
-      min-height: 100vh;
       background: white;
+      min-height: 100vh;
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 0 28px rgba(0,0,0,.15);
     }
 
-    /* ============================
-       HEADER
-    ============================ */
 
-    .hero-header {
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
       position: relative;
-      padding: 14px 18px 10px;
-      background:
-        radial-gradient(circle at 50% 130%, rgba(23,100,173,.45), transparent 40%),
-        linear-gradient(135deg, #06111e 0%, #0b1d31 60%, #07111d 100%);
+      min-height: 170px;
+
+      display: grid;
+      grid-template-columns: 210px 1fr 205px;
+      align-items: center;
+
+      gap: 6px;
+
+      padding: 10px 18px;
+
       color: white;
+
+      background:
+        radial-gradient(
+          circle at 50% 130%,
+          rgba(20,101,173,.42),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          #05111e,
+          #0a2139 58%,
+          #06131f
+        );
+
       border-bottom: 4px solid var(--yellow);
     }
 
-    .hero-top {
-      display: grid;
-      grid-template-columns: 220px 1fr 250px;
-      gap: 18px;
-      align-items: center;
-    }
 
-    .brand-box {
+    /* ---------- LOGO ---------- */
+
+    .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
+      justify-content: flex-start;
     }
 
-    .brand-logo {
-      width: 90px;
-      height: 90px;
-      flex: 0 0 90px;
+    .logo {
+      width: 145px;
+      height: 145px;
+
       border-radius: 50%;
-      border: 3px solid #31465d;
-      background:
-        radial-gradient(circle at center, #151515 0 46%, #050505 47% 54%, #d5a000 55% 68%, #121212 69% 100%);
+
       position: relative;
+
       display: grid;
       place-items: center;
+
+      background:
+        radial-gradient(
+          circle,
+          #0d0d0d 0 46%,
+          #252525 47% 51%,
+          #f1b81b 52% 66%,
+          #111 67% 100%
+        );
+
+      border: 3px solid #556575;
+
+      box-shadow:
+        0 8px 15px rgba(0,0,0,.45),
+        inset 0 0 15px #000;
+    }
+
+    .logo::before {
+      content: "⚙";
+
+      position: absolute;
+
+      font-size: 7.3rem;
+      line-height: 1;
+
+      color: var(--yellow);
+
+      z-index: 1;
+    }
+
+    .logo::after {
+      content: "🔧";
+
+      position: absolute;
+
+      top: 7px;
+      left: 20px;
+
+      font-size: 3.2rem;
+
+      transform: rotate(-42deg);
+
+      z-index: 2;
+
+      filter: grayscale(1);
+    }
+
+    .logo-text {
+      position: relative;
+
+      z-index: 4;
+
+      padding: 5px 8px;
+
+      background: rgba(0,0,0,.73);
+
       color: white;
-      font-size: 1.28rem;
+
+      font-size: 1.55rem;
+
       font-weight: 950;
       font-style: italic;
+
       letter-spacing: -1px;
-      text-shadow: 2px 2px 0 #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+
+      text-shadow:
+        2px 2px #000,
+        -1px -1px #555;
+
+      transform: skew(-8deg);
     }
 
-    .brand-logo::before {
-      content: "⚙";
-      position: absolute;
-      color: var(--yellow);
-      font-size: 4.7rem;
-      line-height: 1;
-      z-index: 0;
-    }
 
-    .brand-logo span {
-      position: relative;
-      z-index: 2;
-      padding: 4px 7px;
-      background: rgba(0,0,0,.72);
-      transform: skew(-7deg);
-    }
-
-    .brand-text {
-      font-size: .76rem;
-      line-height: 1.15;
-      text-transform: uppercase;
-      font-weight: 900;
-      color: #dbe5ee;
-    }
+    /* ---------- MAIN TITLE ---------- */
 
     .headline {
       text-align: center;
-      min-width: 0;
     }
 
     .headline h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 4.6rem);
-      line-height: .9;
-      text-transform: uppercase;
+
+      font-size: clamp(3rem, 5vw, 5.3rem);
+
+      line-height: .88;
+
       font-weight: 950;
-      letter-spacing: -2px;
+
+      letter-spacing: -3px;
+
+      text-transform: uppercase;
     }
 
     .headline h1 span {
       color: var(--yellow);
     }
 
-    .hero-tagline {
-      margin-top: 6px;
-      font-size: clamp(.85rem, 1.7vw, 1.35rem);
+    .tagline {
+      margin-top: 10px;
+
+      font-size: clamp(1.05rem, 1.9vw, 1.6rem);
+
       font-weight: 950;
-      text-transform: uppercase;
+
       font-style: italic;
-      letter-spacing: 1.2px;
-      color: white;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
     }
 
-    .hero-tagline strong {
+    .tagline strong {
       color: var(--yellow);
-      font-size: 1.12em;
     }
+
+
+    /* ---------- RIGHT MOTTO ---------- */
 
     .motto {
       text-align: right;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.45;
+
+      font-size: .95rem;
+
       font-style: italic;
-      font-size: .94rem;
+
+      font-weight: 900;
+
+      line-height: 1.5;
+
+      text-transform: uppercase;
     }
 
     .motto strong {
       color: var(--yellow);
     }
 
-    /* ============================
-       MAIN POSTER GRID
-    ============================ */
+
+    /* =========================================================
+       MAIN INFOGRAPHIC
+    ========================================================= */
 
     .poster {
-      position: relative;
+      padding: 10px 12px;
+
       display: grid;
-      grid-template-columns: minmax(250px, 1fr) minmax(360px, 1.5fr) minmax(250px, 1fr);
+
+      grid-template-columns:
+        minmax(250px, 1fr)
+        minmax(430px, 1.55fr)
+        minmax(250px, 1fr);
+
       gap: 12px;
-      padding: 12px;
+
+      align-items: center;
+
       background:
-        linear-gradient(rgba(255,255,255,.91), rgba(255,255,255,.91)),
+        linear-gradient(
+          rgba(255,255,255,.94),
+          rgba(255,255,255,.94)
+        ),
         repeating-linear-gradient(
           45deg,
-          #dce5ed 0,
-          #dce5ed 1px,
+          #dfe8ef 0,
+          #dfe8ef 1px,
           transparent 1px,
-          transparent 18px
+          transparent 17px
         );
     }
 
-    .card-column {
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .column {
       display: grid;
       gap: 10px;
-      align-content: center;
     }
 
-    .policy-card {
-      background: white;
-      border: 3px solid var(--blue);
-      border-radius: 14px;
+    .card {
       overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+
+      background: white;
+
+      border: 3px solid var(--blue);
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 5px 12px rgba(0,0,0,.13);
     }
 
-    .policy-head {
+    .card-head {
+      min-height: 53px;
+
+      padding: 7px 11px;
+
       display: flex;
+
       align-items: center;
-      gap: 8px;
-      min-height: 48px;
-      padding: 7px 10px;
-      background: linear-gradient(90deg, #07335f, #0f5ca3);
+
+      gap: 9px;
+
       color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          #07335f,
+          #1263aa
+        );
     }
 
-    .policy-icon {
-      width: 42px;
-      flex: 0 0 42px;
-      font-size: 1.8rem;
+    .card-icon {
+      width: 48px;
+
+      flex: 0 0 48px;
+
       text-align: center;
+
+      font-size: 2rem;
     }
 
-    .policy-title h2 {
+    .card-title {
+      flex: 1;
+    }
+
+    .card-title h2 {
       margin: 0;
-      font-size: 1.15rem;
+
+      font-size: 1.24rem;
+
       line-height: 1;
+
       font-weight: 950;
+
       text-transform: uppercase;
     }
 
-    .policy-title div {
+    .card-tag {
       display: inline-block;
+
       margin-top: 4px;
+
       padding: 2px 7px;
+
       background: var(--yellow);
+
       color: #111;
-      font-size: .66rem;
-      font-weight: 900;
-      text-transform: uppercase;
+
       border-radius: 3px;
+
+      font-size: .66rem;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
     }
 
-    .policy-body {
-      padding: 9px 11px 6px;
-      font-size: .79rem;
-      line-height: 1.28;
+    .card-body {
+      min-height: 69px;
+
+      padding: 9px 12px 6px;
+
+      font-size: .8rem;
+
+      line-height: 1.27;
     }
 
-    .policy-body ul {
+    .card-body ul {
       margin: 0;
+
       padding-left: 18px;
     }
 
-    .policy-body li + li {
+    .card-body li + li {
       margin-top: 4px;
     }
 
     .danger {
       color: var(--red);
+
       font-weight: 900;
     }
 
-    .info-btn {
-      width: calc(100% - 18px);
-      margin: 3px 9px 9px;
-      padding: 7px 10px;
+    .info-button {
+      width: calc(100% - 20px);
+
+      margin: 2px 10px 9px;
+
+      padding: 7px;
+
       border: 0;
+
       border-radius: 999px;
+
       background: var(--yellow);
+
       color: #111;
-      font-size: .71rem;
-      font-weight: 950;
-      text-transform: uppercase;
+
       cursor: pointer;
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,.15);
-    }
 
-    .info-btn:hover,
-    .info-btn:focus {
-      background: #ffd85b;
-      outline: 3px solid rgba(13,79,139,.25);
-    }
-
-    /* ============================
-       CENTER HERO
-    ============================ */
-
-    .center-stage {
-      min-height: 510px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 3px solid #0d467d;
-      background:
-        radial-gradient(circle at 50% 45%, rgba(255,255,255,.93) 0 18%, rgba(221,232,241,.86) 46%, rgba(133,161,184,.5) 100%),
-        linear-gradient(180deg, #dce8f0, #bfcfda);
-    }
-
-    .garage-lines {
-      position: absolute;
-      inset: 0;
-      opacity: .22;
-      background:
-        linear-gradient(90deg, transparent 0 18%, #193d5e 18% 19%, transparent 19% 48%, #193d5e 48% 49%, transparent 49% 78%, #193d5e 78% 79%, transparent 79%),
-        linear-gradient(0deg, transparent 0 80%, #193d5e 80% 81%, transparent 81%);
-      pointer-events: none;
-    }
-
-    .speech {
-      position: absolute;
-      z-index: 7;
-      background: white;
-      color: #101010;
-      border: 4px solid #111;
-      border-radius: 50%;
-      font-weight: 950;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: .98;
-      box-shadow: 0 5px 0 rgba(0,0,0,.16);
-    }
-
-    .speech-main {
-      left: 18px;
-      top: 15px;
-      width: 190px;
-      padding: 20px 16px;
-      font-size: 1.45rem;
-      transform: rotate(-4deg);
-    }
-
-    .speech-main strong {
-      display: block;
-      color: var(--blue);
-      font-size: 1.25em;
-    }
-
-    .speech-main::after {
-      content: "";
-      position: absolute;
-      right: 25px;
-      bottom: -30px;
-      width: 0;
-      height: 0;
-      border-left: 34px solid transparent;
-      border-top: 44px solid #111;
-      transform: rotate(-18deg);
-    }
-
-    .speech-main::before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      right: 31px;
-      bottom: -23px;
-      width: 0;
-      height: 0;
-      border-left: 28px solid transparent;
-      border-top: 38px solid white;
-      transform: rotate(-18deg);
-    }
-
-    .speech-we {
-      right: 28px;
-      top: 46px;
-      width: 130px;
-      padding: 18px 10px;
-      font-size: 1.55rem;
-      transform: rotate(4deg);
-    }
-
-    .speech-we strong {
-      color: var(--blue);
-    }
-
-    .speech-we::after {
-      content: "";
-      position: absolute;
-      left: 18px;
-      bottom: -22px;
-      border-right: 27px solid transparent;
-      border-top: 33px solid #111;
-      transform: rotate(15deg);
-    }
-
-    .speech-we::before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      left: 23px;
-      bottom: -16px;
-      border-right: 21px solid transparent;
-      border-top: 27px solid white;
-      transform: rotate(15deg);
-    }
-
-    .burst {
-      position: absolute;
-      top: 130px;
-      width: 210px;
-      height: 210px;
-      opacity: .42;
-      border-radius: 50%;
-      background:
-        repeating-conic-gradient(
-          from 0deg,
-          transparent 0deg 6deg,
-          currentColor 6deg 9deg
-        );
-      filter: blur(.1px);
-    }
-
-    .burst.left {
-      left: 25px;
-      color: #1268b5;
-    }
-
-    .burst.right {
-      right: 25px;
-      color: #f5c421;
-    }
-
-    .characters {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 0;
-      padding: 70px 20px 0;
-    }
-
-    .character {
-      position: relative;
-      width: 185px;
-      height: 405px;
-    }
-
-    .character.male {
-      transform: rotate(-2deg) translateX(12px);
-      z-index: 5;
-    }
-
-    .character.female {
-      transform: rotate(2deg) translateX(-12px);
-      z-index: 4;
-    }
-
-    .person-head {
-      position: absolute;
-      width: 77px;
-      height: 88px;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      border-radius: 48% 48% 44% 44%;
-      background: #d8a57f;
-      border: 3px solid #272019;
-      z-index: 4;
-    }
-
-    .female .person-head {
-      background: #e1b18d;
-    }
-
-    .hair {
-      position: absolute;
-      left: 50%;
-      top: -7px;
-      width: 88px;
-      height: 44px;
-      transform: translateX(-50%);
-      border-radius: 55% 55% 28% 28%;
-      background: #2c211a;
-      z-index: 6;
-    }
-
-    .female .hair {
-      width: 96px;
-      height: 51px;
-      background: #b27849;
-    }
-
-    .female .hair::after {
-      content: "";
-      position: absolute;
-      right: 4px;
-      top: 23px;
-      width: 28px;
-      height: 95px;
-      border-radius: 50%;
-      background: #b27849;
-      transform: rotate(-8deg);
-    }
-
-    .safety-glasses {
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      width: 82px;
-      height: 21px;
-      transform: translateX(-50%);
-      border: 3px solid #d7e8ef;
-      border-radius: 8px;
-      background: rgba(225,243,250,.55);
-      z-index: 8;
-      box-shadow: 0 0 0 2px rgba(70,70,70,.6);
-    }
-
-    .person-torso {
-      position: absolute;
-      left: 50%;
-      top: 77px;
-      width: 150px;
-      height: 180px;
-      transform: translateX(-50%);
-      border-radius: 20px 20px 5px 5px;
-      background:
-        linear-gradient(90deg, #164f85 0 20%, #102030 20% 80%, #164f85 80% 100%);
-      border: 3px solid #07131e;
-      z-index: 3;
-    }
-
-    .person-torso::after {
-      content: "RMCTC";
-      position: absolute;
-      left: 17px;
-      top: 25px;
       font-size: .72rem;
+
       font-weight: 950;
-      color: white;
-      transform: rotate(-4deg);
+
+      text-transform: uppercase;
+
+      box-shadow:
+        inset 0 -2px 0 rgba(0,0,0,.15);
     }
 
-    .arms-cross {
+    .info-button:hover,
+    .info-button:focus {
+      background: #ffd85a;
+
+      outline: 3px solid rgba(13,79,139,.22);
+    }
+
+
+    /* =========================================================
+       COMIC CENTER
+    ========================================================= */
+
+    .comic-stage {
+      position: relative;
+
+      height: 535px;
+
+      overflow: hidden;
+
+      border: 4px solid #0a4175;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          rgba(226,238,246,.82),
+          rgba(183,204,219,.84)
+        );
+
+      box-shadow:
+        inset 0 0 30px rgba(0,0,0,.12);
+    }
+
+
+    /* garage window / lift styling */
+
+    .shop-bg {
       position: absolute;
-      top: 127px;
-      left: 50%;
-      width: 165px;
-      height: 70px;
-      transform: translateX(-50%);
-      z-index: 6;
-    }
 
-    .arms-cross::before,
-    .arms-cross::after {
-      content: "";
-      position: absolute;
-      top: 20px;
-      width: 102px;
-      height: 28px;
-      background: #d9a67f;
-      border: 2px solid #7c563d;
-      border-radius: 20px;
-    }
+      inset: 0;
 
-    .arms-cross::before {
-      left: 3px;
-      transform: rotate(18deg);
-    }
+      opacity: .28;
 
-    .arms-cross::after {
-      right: 3px;
-      transform: rotate(-18deg);
-    }
-
-    .female .arms-cross::before,
-    .female .arms-cross::after {
-      background: #e3b28e;
-    }
-
-    .person-legs {
-      position: absolute;
-      top: 250px;
-      left: 50%;
-      width: 125px;
-      height: 140px;
-      transform: translateX(-50%);
       background:
         linear-gradient(
           90deg,
-          #17202b 0 45%,
-          transparent 45% 55%,
-          #17202b 55% 100%
+          transparent 0 18%,
+          #123c5c 18% 19%,
+          transparent 19% 49%,
+          #123c5c 49% 50%,
+          transparent 50% 80%,
+          #123c5c 80% 81%,
+          transparent 81%
+        ),
+        linear-gradient(
+          0deg,
+          transparent 0 78%,
+          #123c5c 78% 79%,
+          transparent 79%
         );
-      z-index: 2;
     }
 
-    .person-shoes {
-      position: absolute;
-      top: 382px;
-      left: 50%;
-      width: 140px;
-      height: 23px;
-      transform: translateX(-50%);
-    }
 
-    .person-shoes::before,
-    .person-shoes::after {
+    /* comic halftone texture */
+
+    .comic-stage::after {
       content: "";
+
       position: absolute;
-      bottom: 0;
-      width: 58px;
-      height: 20px;
-      border-radius: 16px 16px 6px 6px;
-      background: #151a1e;
-      border: 2px solid #07090b;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: .12;
+
+      background-image:
+        radial-gradient(
+          #000 1px,
+          transparent 1px
+        );
+
+      background-size:
+        7px 7px;
     }
 
-    .person-shoes::before {
-      left: 7px;
-    }
 
-    .person-shoes::after {
-      right: 7px;
-    }
+    /* starbursts */
 
-    .stance-label {
+    .burst {
       position: absolute;
-      bottom: 10px;
-      width: 100%;
+
+      top: 110px;
+
+      width: 270px;
+      height: 270px;
+
+      border-radius: 50%;
+
+      opacity: .5;
+
+      background:
+        repeating-conic-gradient(
+          transparent 0deg 5deg,
+          currentColor 5deg 8deg
+        );
+    }
+
+    .burst.blue {
+      left: 14px;
+
+      color: #1171bf;
+    }
+
+    .burst.yellow {
+      right: 12px;
+
+      color: #f3c627;
+    }
+
+
+    /* female speech bubble only */
+
+    .female-bubble {
+      position: absolute;
+
+      top: 35px;
+      right: 38px;
+
+      z-index: 20;
+
+      width: 145px;
+
+      padding: 19px 12px;
+
       text-align: center;
-      z-index: 8;
-      color: white;
-      font-size: .8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 0 #000;
-      letter-spacing: .5px;
-    }
 
-    /* ============================
-       PHONE + READY CHECK
-    ============================ */
-
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1.35fr;
-      gap: 10px;
-      padding: 0 12px 10px;
       background: white;
+
+      border: 5px solid #111;
+
+      border-radius: 50%;
+
+      color: #111;
+
+      font-size: 1.55rem;
+
+      font-weight: 950;
+
+      line-height: .9;
+
+      text-transform: uppercase;
+
+      transform: rotate(4deg);
+
+      box-shadow:
+        5px 7px 0 rgba(0,0,0,.18);
     }
+
+    .female-bubble strong {
+      color: var(--blue);
+    }
+
+    .female-bubble::before {
+      content: "";
+
+      position: absolute;
+
+      bottom: -30px;
+      left: 24px;
+
+      border-top: 36px solid #111;
+
+      border-right: 27px solid transparent;
+    }
+
+    .female-bubble::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: -21px;
+      left: 29px;
+
+      border-top: 29px solid white;
+
+      border-right: 21px solid transparent;
+    }
+
+
+    /* =========================================================
+       VECTOR CHARACTERS
+    ========================================================= */
+
+    .characters {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      padding-bottom: 8px;
+
+      z-index: 10;
+    }
+
+    .comic-person {
+      width: 230px;
+      height: 455px;
+    }
+
+    .male-svg {
+      margin-right: -28px;
+
+      transform: rotate(-2deg);
+    }
+
+    .female-svg {
+      margin-left: -28px;
+
+      transform: rotate(2deg);
+    }
+
+
+    /* Thick comic outlines */
+
+    .comic-line {
+      stroke: #111;
+
+      stroke-width: 7;
+
+      stroke-linejoin: round;
+
+      stroke-linecap: round;
+    }
+
+    .comic-line-small {
+      stroke: #111;
+
+      stroke-width: 5;
+
+      stroke-linejoin: round;
+
+      stroke-linecap: round;
+    }
+
+
+    /* =========================================================
+       CENTER CAPTION
+    ========================================================= */
+
+    .center-caption {
+      position: absolute;
+
+      bottom: 7px;
+      left: 0;
+
+      z-index: 20;
+
+      width: 100%;
+
+      text-align: center;
+
+      color: white;
+
+      font-size: .78rem;
+
+      font-weight: 950;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        2px 2px 0 #000,
+        -1px -1px 0 #000;
+    }
+
+
+    /* =========================================================
+       BOTTOM AREA
+    ========================================================= */
+
+    .bottom-row {
+      display: grid;
+
+      grid-template-columns:
+        1.05fr
+        1.35fr;
+
+      gap: 10px;
+
+      padding: 0 12px 9px;
+    }
+
+
+    /* ---------- PHONE ---------- */
 
     .phone-panel {
-      min-height: 90px;
+      min-height: 87px;
+
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 12px;
+
+      grid-template-columns:
+        70px
+        1fr
+        auto;
+
       align-items: center;
-      padding: 10px 12px;
-      border: 3px solid #111;
-      border-radius: 14px;
+
+      gap: 12px;
+
+      padding: 8px 11px;
+
       background:
-        linear-gradient(90deg, #fff2b0, #f8c93e);
-      box-shadow: 0 5px 12px rgba(0,0,0,.12);
+        linear-gradient(
+          90deg,
+          #fff1ab,
+          #f7c638
+        );
+
+      border: 3px solid #111;
+
+      border-radius: 14px;
     }
 
-    .phone-symbol {
-      width: 62px;
-      height: 62px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: white;
-      border: 6px solid red;
-      font-size: 2rem;
-      position: relative;
-    }
-
-    .phone-symbol::after {
-      content: "";
-      position: absolute;
+    .phone-stop {
       width: 64px;
+      height: 64px;
+
+      display: grid;
+
+      place-items: center;
+
+      position: relative;
+
+      border-radius: 50%;
+
+      background: white;
+
+      border: 6px solid red;
+
+      font-size: 2rem;
+    }
+
+    .phone-stop::after {
+      content: "";
+
+      position: absolute;
+
+      width: 65px;
       height: 6px;
+
       background: red;
+
       transform: rotate(45deg);
     }
 
     .phone-title {
       margin: 0;
-      font-size: 1.05rem;
+
+      font-size: 1rem;
+
       font-weight: 950;
+
       text-transform: uppercase;
-      line-height: 1;
     }
 
     .phone-title strong {
       display: block;
-      margin-top: 3px;
+
+      margin-top: 2px;
+
       color: var(--red);
-      font-size: 1.35rem;
+
+      font-size: 1.32rem;
+
       font-style: italic;
     }
 
     .phone-copy {
-      margin-top: 4px;
-      font-size: .74rem;
+      margin-top: 3px;
+
+      font-size: .72rem;
+
       font-weight: 700;
-      line-height: 1.2;
     }
 
-    .phone-info {
+    .phone-btn {
+      padding: 8px 13px;
+
       border: 0;
+
       border-radius: 999px;
-      padding: 8px 12px;
-      background: var(--navy-2);
+
+      background: var(--navy2);
+
       color: white;
-      font-size: .72rem;
-      font-weight: 900;
-      text-transform: uppercase;
+
       cursor: pointer;
+
+      font-size: .7rem;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
     }
+
+
+    /* ---------- READY CHECK ---------- */
 
     .ready-panel {
-      border: 3px solid var(--blue);
-      border-radius: 14px;
-      background: white;
       overflow: hidden;
-      box-shadow: 0 5px 12px rgba(0,0,0,.12);
+
+      border: 3px solid var(--blue);
+
+      border-radius: 14px;
     }
 
-    .ready-head {
-      padding: 5px 10px;
+    .ready-title {
+      padding: 5px;
+
       background: #101010;
+
       color: white;
+
       text-align: center;
-      font-size: .88rem;
-      font-weight: 900;
-      text-transform: uppercase;
+
+      font-size: .87rem;
+
+      font-weight: 950;
+
       font-style: italic;
-      letter-spacing: .8px;
+
+      text-transform: uppercase;
     }
 
     .ready-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+
+      grid-template-columns:
+        repeat(6, 1fr);
+
+      background: white;
     }
 
     .ready-item {
-      min-height: 62px;
-      padding: 6px 3px;
+      min-height: 59px;
+
+      padding: 5px 2px;
+
       display: grid;
+
       place-items: center;
+
+      border-right: 1px solid #bdcad4;
+
       text-align: center;
-      border-right: 1px solid #bbc9d5;
     }
 
     .ready-item:last-child {
       border-right: 0;
     }
 
-    .ready-item .icon {
-      font-size: 1.45rem;
+    .ready-icon {
+      font-size: 1.35rem;
+
       line-height: 1;
     }
 
-    .ready-item .label {
-      font-size: .58rem;
-      line-height: 1.05;
+    .ready-label {
+      font-size: .56rem;
+
       font-weight: 900;
+
+      line-height: 1.05;
+
       text-transform: uppercase;
     }
 
-    .ready-item .check {
+    .ready-check {
       color: var(--green);
-      font-size: .95rem;
-      font-weight: 900;
+
+      font-size: .9rem;
+
+      font-weight: 950;
     }
 
-    /* ============================
+
+    /* =========================================================
        FOOTER
-    ============================ */
+    ========================================================= */
 
     .footer {
-      padding: 7px 12px;
-      background: var(--navy);
-      color: white;
+      padding: 6px 10px;
+
       text-align: center;
-      font-size: .8rem;
+
+      background: var(--navy);
+
+      color: white;
+
+      font-size: .78rem;
+
       font-weight: 900;
-      text-transform: uppercase;
+
       letter-spacing: 1px;
+
+      text-transform: uppercase;
     }
 
     .footer strong {
       color: var(--yellow);
     }
 
-    /* ============================
-       MODAL
-    ============================ */
 
-    .modal-backdrop {
+    /* =========================================================
+       MODAL
+    ========================================================= */
+
+    .modal-bg {
       position: fixed;
+
       inset: 0;
+
       z-index: 9999;
+
       display: none;
+
       align-items: center;
+
       justify-content: center;
+
       padding: 18px;
-      background: rgba(0,0,0,.68);
+
+      background: rgba(0,0,0,.7);
     }
 
-    .modal-backdrop.open {
+    .modal-bg.open {
       display: flex;
     }
 
     .modal {
       width: min(520px, 100%);
+
       overflow: hidden;
-      border-radius: 15px;
+
       background: white;
-      box-shadow: 0 20px 55px rgba(0,0,0,.35);
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.4);
     }
 
     .modal-head {
       display: flex;
-      align-items: center;
+
       justify-content: space-between;
-      gap: 12px;
+
+      align-items: center;
+
       padding: 13px 15px;
-      background: linear-gradient(90deg, #07335f, #0f5ca3);
+
+      background:
+        linear-gradient(
+          90deg,
+          #07335f,
+          #1263aa
+        );
+
       color: white;
     }
 
     .modal-head h3 {
       margin: 0;
+
       font-size: 1.15rem;
+
       text-transform: uppercase;
     }
 
     .modal-close {
       border: 0;
+
       background: transparent;
+
       color: white;
-      font-size: 1.65rem;
+
+      font-size: 1.7rem;
+
       cursor: pointer;
     }
 
     .modal-content {
       padding: 16px;
-      font-size: .91rem;
+
+      font-size: .9rem;
+
       line-height: 1.4;
     }
 
     .modal-content h4 {
-      margin: 0 0 5px;
+      margin: 0 0 4px;
+
       color: var(--blue);
+
       font-size: .8rem;
+
       text-transform: uppercase;
     }
 
@@ -858,22 +1036,32 @@
 
     .got-it {
       width: 100%;
-      padding: 10px;
+
+      padding: 9px;
+
       border: 0;
-      border-radius: 8px;
+
+      border-radius: 7px;
+
       background: var(--yellow);
+
       color: #111;
-      font-weight: 900;
-      text-transform: uppercase;
+
       cursor: pointer;
+
+      font-weight: 950;
+
+      text-transform: uppercase;
     }
 
-    /* ============================
-       RESPONSIVE
-    ============================ */
 
-    @media (max-width: 980px) {
-      .hero-top {
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .header {
         grid-template-columns: 160px 1fr;
       }
 
@@ -885,69 +1073,78 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .center-stage {
+      .comic-stage {
         grid-column: 1 / -1;
         grid-row: 1;
-        min-height: 460px;
       }
 
-      .bottom-grid {
+      .bottom-row {
         grid-template-columns: 1fr;
       }
+
     }
 
-    @media (max-width: 640px) {
-      .hero-top {
+
+    @media (max-width: 650px) {
+
+      .header {
         grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        text-align: center;
       }
 
-      .brand-box {
+      .brand {
         justify-content: center;
       }
 
-      .brand-text {
-        display: none;
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+
+      .logo::before {
+        font-size: 5.7rem;
       }
 
       .headline h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
       }
 
       .poster {
         grid-template-columns: 1fr;
-        padding: 8px;
       }
 
-      .center-stage {
+      .comic-stage {
         grid-column: auto;
-        min-height: 420px;
+
+        height: 470px;
       }
 
-      .characters {
-        transform: scale(.86);
-        transform-origin: center bottom;
+      .comic-person {
+        width: 190px;
+        height: 410px;
       }
 
-      .speech-main {
-        width: 150px;
-        font-size: 1.1rem;
-      }
+      .female-bubble {
+        width: 115px;
 
-      .speech-we {
-        width: 105px;
+        right: 12px;
+
         font-size: 1.2rem;
       }
 
-      .bottom-grid {
+      .bottom-row {
         padding-left: 8px;
         padding-right: 8px;
       }
 
       .phone-panel {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 65px 1fr;
       }
 
-      .phone-info {
+      .phone-btn {
         grid-column: 1 / -1;
       }
 
@@ -955,378 +1152,1114 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .ready-item {
-        border-bottom: 1px solid #bbc9d5;
-      }
     }
   </style>
 </head>
+
 
 <body>
 
 <main class="page">
 
-  <header class="hero-header">
 
-    <div class="hero-top">
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
 
-      <div class="brand-box">
-        <div class="brand-logo">
-          <span>RMCTC</span>
-        </div>
+  <header class="header">
 
-        <div class="brand-text">
-          Automotive<br>
-          Technology
-        </div>
-      </div>
+    <div class="brand">
 
-
-      <div class="headline">
-        <h1>
-          Are You <span>Shop Ready?</span>
-        </h1>
-
-        <div class="hero-tagline">
-          <strong>ALL DAY.</strong> EVERY DAY.
+      <div class="logo">
+        <div class="logo-text">
+          RMCTC
         </div>
       </div>
 
+    </div>
 
-      <div class="motto">
-        Be Prepared.<br>
-        Be Professional.<br>
-        Be <strong>Shop Ready.</strong>
+
+    <div class="headline">
+
+      <h1>
+        Are You
+        <span>Shop Ready?</span>
+      </h1>
+
+      <div class="tagline">
+        <strong>ALL DAY.</strong>
+        EVERY DAY.
       </div>
 
+    </div>
+
+
+    <div class="motto">
+      Be Prepared.<br>
+      Be Professional.<br>
+      Be <strong>Shop Ready.</strong>
     </div>
 
   </header>
 
 
+  <!-- =======================================================
+       MAIN POSTER
+  ======================================================== -->
+
   <section class="poster">
 
-    <!-- LEFT COLUMN -->
 
-    <div class="card-column">
+    <!-- =======================
+         LEFT COLUMN
+    ======================== -->
 
-      <article class="policy-card">
+    <div class="column">
 
-        <div class="policy-head">
-          <div class="policy-icon">🥽</div>
 
-          <div class="policy-title">
-            <h2>Eyes</h2>
-            <div>Safety Glasses</div>
+      <!-- EYES -->
+
+      <article class="card">
+
+        <div class="card-head">
+
+          <div class="card-icon">
+            🥽
           </div>
+
+          <div class="card-title">
+
+            <h2>
+              Eyes
+            </h2>
+
+            <div class="card-tag">
+              Safety Glasses
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="policy-body">
+
+        <div class="card-body">
+
           <ul>
-            <li>Clear <strong>ANSI Z87-approved</strong> safety glasses.</li>
-            <li>Prescription glasses require approved side shields.</li>
-            <li>Safety goggles are acceptable.</li>
+
+            <li>
+              Clear
+              <strong>
+                ANSI Z87-approved
+              </strong>
+              safety glasses.
+            </li>
+
+            <li>
+              Prescription glasses require approved side shields.
+            </li>
+
+            <li>
+              Safety goggles are acceptable.
+            </li>
+
           </ul>
+
         </div>
 
-        <button class="info-btn" data-topic="glasses">
+
+        <button
+          class="info-button"
+          data-topic="glasses"
+        >
           ⓘ Why It Matters
         </button>
 
       </article>
 
 
-      <article class="policy-card">
+      <!-- FEET -->
 
-        <div class="policy-head">
-          <div class="policy-icon">👟</div>
+      <article class="card">
 
-          <div class="policy-title">
-            <h2>Feet</h2>
-            <div>Safety Footwear</div>
+        <div class="card-head">
+
+          <div class="card-icon">
+            👟
           </div>
+
+          <div class="card-title">
+
+            <h2>
+              Feet
+            </h2>
+
+            <div class="card-tag">
+              Safety Footwear
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="policy-body">
+
+        <div class="card-body">
+
           <ul>
-            <li>Steel or composite safety toe.</li>
-            <li>Oil and slip-resistant sole.</li>
-            <li>Black or dark brown.</li>
-            <li>Work shoe or work boot style.</li>
+
+            <li>
+              Steel or composite safety toe.
+            </li>
+
+            <li>
+              Oil and slip-resistant sole.
+            </li>
+
+            <li>
+              Black or dark brown.
+            </li>
+
+            <li>
+              Work shoe or work boot style.
+            </li>
+
           </ul>
+
         </div>
 
-        <button class="info-btn" data-topic="footwear">
+
+        <button
+          class="info-button"
+          data-topic="footwear"
+        >
           ⓘ Why It Matters
         </button>
 
       </article>
 
 
-      <article class="policy-card">
+      <!-- JEWELRY -->
 
-        <div class="policy-head">
-          <div class="policy-icon">💍</div>
+      <article class="card">
 
-          <div class="policy-title">
-            <h2>Jewelry</h2>
-            <div>Leave It Off</div>
+        <div class="card-head">
+
+          <div class="card-icon">
+            🚫💍
           </div>
+
+          <div class="card-title">
+
+            <h2>
+              Jewelry
+            </h2>
+
+            <div class="card-tag">
+              Leave It Off
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="policy-body">
+
+        <div class="card-body">
+
           <ul>
-            <li>No necklaces, rings, bracelets, or large piercings.</li>
+
+            <li>
+              No necklaces, rings, bracelets,
+              or large piercings.
+            </li>
+
           </ul>
+
         </div>
 
-        <button class="info-btn" data-topic="jewelry">
+
+        <button
+          class="info-button"
+          data-topic="jewelry"
+        >
           ⓘ Why It Matters
         </button>
 
       </article>
+
 
     </div>
 
 
-    <!-- CENTER -->
+    <!-- =======================
+         COMIC CENTER
+    ======================== -->
 
-    <section class="center-stage">
+    <section class="comic-stage">
 
-      <div class="garage-lines"></div>
+      <div class="shop-bg"></div>
 
-      <div class="burst left"></div>
-      <div class="burst right"></div>
+      <div class="burst blue"></div>
 
-      <div class="speech speech-main">
-        Are You
-        <strong>Shop Ready?</strong>
-      </div>
+      <div class="burst yellow"></div>
 
-      <div class="speech speech-we">
-        <strong>We Are!</strong>
+
+      <!-- Header asks the question now.
+           Only the female answers it. -->
+
+      <div class="female-bubble">
+        <strong>WE ARE!</strong>
       </div>
 
 
       <div class="characters">
 
-        <div class="character male">
 
-          <div class="person-head">
-            <div class="hair"></div>
-            <div class="safety-glasses"></div>
-          </div>
+        <!-- =================================
+             MALE TECHNICIAN
+        ================================== -->
 
-          <div class="person-torso"></div>
-          <div class="arms-cross"></div>
-          <div class="person-legs"></div>
-          <div class="person-shoes"></div>
+        <svg
+          class="comic-person male-svg"
+          viewBox="0 0 230 455"
+          aria-label="Male automotive technology student"
+        >
 
-        </div>
+          <!-- legs -->
+
+          <path
+            class="comic-line"
+            fill="#192431"
+            d="
+              M70 278
+              L111 278
+              L110 420
+              L69 420
+              Z
+            "
+          />
+
+          <path
+            class="comic-line"
+            fill="#192431"
+            d="
+              M114 278
+              L154 278
+              L161 420
+              L119 420
+              Z
+            "
+          />
 
 
-        <div class="character female">
+          <!-- shoes -->
 
-          <div class="person-head">
-            <div class="hair"></div>
-            <div class="safety-glasses"></div>
-          </div>
+          <path
+            class="comic-line"
+            fill="#111820"
+            d="
+              M63 415
+              L111 415
+              L112 438
+              Q90 450 58 438
+              Z
+            "
+          />
 
-          <div class="person-torso"></div>
-          <div class="arms-cross"></div>
-          <div class="person-legs"></div>
-          <div class="person-shoes"></div>
+          <path
+            class="comic-line"
+            fill="#111820"
+            d="
+              M119 415
+              L161 415
+              L170 439
+              Q147 448 116 438
+              Z
+            "
+          />
 
-        </div>
+
+          <!-- torso -->
+
+          <path
+            class="comic-line"
+            fill="#0d2943"
+            d="
+              M57 121
+              Q115 93 172 122
+              L164 292
+              L64 292
+              Z
+            "
+          />
+
+
+          <!-- blue side panels -->
+
+          <path
+            fill="#145991"
+            d="
+              M59 126
+              L83 117
+              L84 285
+              L65 287
+              Z
+            "
+          />
+
+          <path
+            fill="#145991"
+            d="
+              M146 115
+              L169 126
+              L163 287
+              L145 284
+              Z
+            "
+          />
+
+
+          <!-- RMCTC patch -->
+
+          <rect
+            x="80"
+            y="155"
+            width="47"
+            height="22"
+            rx="3"
+            fill="#ffffff"
+            stroke="#111"
+            stroke-width="3"
+          />
+
+          <text
+            x="103"
+            y="170"
+            text-anchor="middle"
+            font-size="13"
+            font-family="Arial"
+            font-weight="900"
+            fill="#0d4f8b"
+          >
+            RMCTC
+          </text>
+
+
+          <!-- head -->
+
+          <ellipse
+            class="comic-line"
+            cx="114"
+            cy="88"
+            rx="47"
+            ry="51"
+            fill="#c89068"
+          />
+
+
+          <!-- hair -->
+
+          <path
+            class="comic-line"
+            fill="#241914"
+            d="
+              M66 74
+              Q64 24 112 23
+              Q164 25 162 74
+              Q145 48 116 51
+              Q85 45 66 74
+              Z
+            "
+          />
+
+
+          <!-- safety glasses -->
+
+          <rect
+            class="comic-line-small"
+            x="70"
+            y="77"
+            width="42"
+            height="22"
+            rx="8"
+            fill="#dff3fa"
+            opacity=".85"
+          />
+
+          <rect
+            class="comic-line-small"
+            x="116"
+            y="77"
+            width="42"
+            height="22"
+            rx="8"
+            fill="#dff3fa"
+            opacity=".85"
+          />
+
+          <line
+            x1="111"
+            y1="87"
+            x2="117"
+            y2="87"
+            stroke="#111"
+            stroke-width="5"
+          />
+
+
+          <!-- confident eyebrow / mouth -->
+
+          <path
+            d="M87 69 Q98 65 106 69"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+          <path
+            d="M122 69 Q134 65 143 70"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+          <path
+            d="M99 111 Q116 123 135 108"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+
+          <!-- crossed arms -->
+
+          <path
+            class="comic-line"
+            fill="#c89068"
+            d="
+              M55 168
+              Q48 185 63 194
+              L139 229
+              Q151 234 159 221
+              Q165 207 150 201
+              L80 166
+              Q65 158 55 168
+              Z
+            "
+          />
+
+          <path
+            class="comic-line"
+            fill="#c89068"
+            d="
+              M169 168
+              Q179 184 164 195
+              L89 229
+              Q74 235 68 221
+              Q63 207 78 201
+              L147 166
+              Q161 158 169 168
+              Z
+            "
+          />
+
+        </svg>
+
+
+        <!-- =================================
+             FEMALE TECHNICIAN
+        ================================== -->
+
+        <svg
+          class="comic-person female-svg"
+          viewBox="0 0 230 455"
+          aria-label="Female automotive technology student"
+        >
+
+          <!-- legs -->
+
+          <path
+            class="comic-line"
+            fill="#192431"
+            d="
+              M72 278
+              L112 278
+              L109 420
+              L69 420
+              Z
+            "
+          />
+
+          <path
+            class="comic-line"
+            fill="#192431"
+            d="
+              M116 278
+              L156 278
+              L162 420
+              L121 420
+              Z
+            "
+          />
+
+
+          <!-- shoes -->
+
+          <path
+            class="comic-line"
+            fill="#111820"
+            d="
+              M64 415
+              L110 415
+              L111 438
+              Q87 449 58 438
+              Z
+            "
+          />
+
+          <path
+            class="comic-line"
+            fill="#111820"
+            d="
+              M120 415
+              L163 415
+              L171 439
+              Q148 448 118 438
+              Z
+            "
+          />
+
+
+          <!-- torso -->
+
+          <path
+            class="comic-line"
+            fill="#0d2943"
+            d="
+              M58 121
+              Q115 95 171 121
+              L164 292
+              L64 292
+              Z
+            "
+          />
+
+
+          <!-- blue side panels -->
+
+          <path
+            fill="#145991"
+            d="
+              M60 126
+              L83 117
+              L84 285
+              L65 287
+              Z
+            "
+          />
+
+          <path
+            fill="#145991"
+            d="
+              M146 116
+              L169 126
+              L163 287
+              L145 284
+              Z
+            "
+          />
+
+
+          <!-- RMCTC patch -->
+
+          <rect
+            x="81"
+            y="154"
+            width="48"
+            height="22"
+            rx="3"
+            fill="#ffffff"
+            stroke="#111"
+            stroke-width="3"
+          />
+
+          <text
+            x="105"
+            y="169"
+            text-anchor="middle"
+            font-size="13"
+            font-family="Arial"
+            font-weight="900"
+            fill="#0d4f8b"
+          >
+            RMCTC
+          </text>
+
+
+          <!-- hair behind head -->
+
+          <path
+            class="comic-line"
+            fill="#ae7042"
+            d="
+              M68 73
+              Q62 24 113 19
+              Q165 22 164 78
+              L171 167
+              Q145 153 142 86
+              Z
+            "
+          />
+
+
+          <!-- head -->
+
+          <ellipse
+            class="comic-line"
+            cx="113"
+            cy="88"
+            rx="45"
+            ry="50"
+            fill="#d8a37c"
+          />
+
+
+          <!-- hair front -->
+
+          <path
+            fill="#ae7042"
+            stroke="#111"
+            stroke-width="6"
+            d="
+              M70 69
+              Q72 22 116 23
+              Q150 24 160 64
+              Q136 48 108 50
+              Q87 48 70 69
+              Z
+            "
+          />
+
+
+          <!-- safety glasses -->
+
+          <rect
+            class="comic-line-small"
+            x="71"
+            y="76"
+            width="40"
+            height="22"
+            rx="8"
+            fill="#dff3fa"
+            opacity=".85"
+          />
+
+          <rect
+            class="comic-line-small"
+            x="115"
+            y="76"
+            width="40"
+            height="22"
+            rx="8"
+            fill="#dff3fa"
+            opacity=".85"
+          />
+
+          <line
+            x1="111"
+            y1="86"
+            x2="116"
+            y2="86"
+            stroke="#111"
+            stroke-width="5"
+          />
+
+
+          <!-- face -->
+
+          <path
+            d="M87 69 Q97 65 106 69"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+          <path
+            d="M121 69 Q132 65 142 69"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+          <path
+            d="M97 111 Q113 124 132 108"
+            stroke="#111"
+            stroke-width="4"
+            fill="none"
+          />
+
+
+          <!-- crossed arms -->
+
+          <path
+            class="comic-line"
+            fill="#d8a37c"
+            d="
+              M56 168
+              Q48 184 63 195
+              L139 229
+              Q153 234 159 221
+              Q164 207 149 201
+              L80 166
+              Q66 159 56 168
+              Z
+            "
+          />
+
+          <path
+            class="comic-line"
+            fill="#d8a37c"
+            d="
+              M169 168
+              Q178 184 164 195
+              L89 229
+              Q74 235 68 221
+              Q63 207 78 201
+              L147 166
+              Q161 158 169 168
+              Z
+            "
+          />
+
+        </svg>
+
 
       </div>
 
 
-      <div class="stance-label">
+      <div class="center-caption">
         Proper Uniform • Proper PPE • Ready to Work
       </div>
 
     </section>
 
 
-    <!-- RIGHT COLUMN -->
+    <!-- =======================
+         RIGHT COLUMN
+    ======================== -->
 
-    <div class="card-column">
+    <div class="column">
 
-      <article class="policy-card">
 
-        <div class="policy-head">
-          <div class="policy-icon">👕</div>
+      <!-- SHIRT -->
 
-          <div class="policy-title">
-            <h2>Shirt</h2>
-            <div>RMCTC Work Shirt</div>
+      <article class="card">
+
+        <div class="card-head">
+
+          <div class="card-icon">
+            👕
           </div>
-        </div>
 
-        <div class="policy-body">
-          <ul>
-            <li>RMCTC-provided work shirt.</li>
-            <li>RMCTC or automotive-manufacturer logos only.</li>
-            <li class="danger">No hoodies or bandanas.</li>
-          </ul>
-        </div>
+          <div class="card-title">
 
-        <button class="info-btn" data-topic="shirt">
-          ⓘ Why It Matters
-        </button>
+            <h2>
+              Shirt
+            </h2>
 
-      </article>
+            <div class="card-tag">
+              RMCTC Work Shirt
+            </div>
 
-
-      <article class="policy-card">
-
-        <div class="policy-head">
-          <div class="policy-icon">👖</div>
-
-          <div class="policy-title">
-            <h2>Pants</h2>
-            <div>Work Pants</div>
           </div>
+
         </div>
 
-        <div class="policy-body">
+
+        <div class="card-body">
+
           <ul>
-            <li>Blue or black work pants.</li>
-          </ul>
-        </div>
 
-        <button class="info-btn" data-topic="pants">
-          ⓘ Why It Matters
-        </button>
-
-      </article>
-
-
-      <article class="policy-card">
-
-        <div class="policy-head">
-          <div class="policy-icon">🧢</div>
-
-          <div class="policy-title">
-            <h2>Hats</h2>
-            <div>Permitted</div>
-          </div>
-        </div>
-
-        <div class="policy-body">
-          <ul>
             <li>
-              Hats are permitted unless they interfere with required PPE
-              or create a shop-safety hazard.
+              RMCTC-provided work shirt.
             </li>
+
+            <li>
+              RMCTC or automotive-manufacturer logos only.
+            </li>
+
+            <li class="danger">
+              No hoodies.
+            </li>
+
           </ul>
+
         </div>
 
-        <button class="info-btn" data-topic="hats">
+
+        <button
+          class="info-button"
+          data-topic="shirt"
+        >
+          ⓘ Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- PANTS -->
+
+      <article class="card">
+
+        <div class="card-head">
+
+          <div class="card-icon">
+            👖
+          </div>
+
+          <div class="card-title">
+
+            <h2>
+              Pants
+            </h2>
+
+            <div class="card-tag">
+              Work Pants
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              Blue or black work pants.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="info-button"
+          data-topic="pants"
+        >
+          ⓘ Why It Matters
+        </button>
+
+      </article>
+
+
+      <!-- HEADWEAR -->
+
+      <article class="card">
+
+        <div class="card-head">
+
+          <div class="card-icon">
+            🧢
+          </div>
+
+          <div class="card-title">
+
+            <h2>
+              Headwear
+            </h2>
+
+            <div class="card-tag">
+              Hats Permitted
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <ul>
+
+            <li>
+              Hats are permitted.
+            </li>
+
+            <li class="danger">
+              No bandannas.
+            </li>
+
+            <li>
+              Headwear may not interfere with PPE
+              or safe shop operation.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <button
+          class="info-button"
+          data-topic="headwear"
+        >
           ⓘ Shop Expectation
         </button>
 
       </article>
 
+
     </div>
+
 
   </section>
 
 
-  <section class="bottom-grid">
+  <!-- =======================================================
+       BOTTOM
+  ======================================================== -->
+
+  <section class="bottom-row">
+
+
+    <!-- PHONE -->
 
     <div class="phone-panel">
 
-      <div class="phone-symbol">
+      <div class="phone-stop">
         📱
       </div>
 
+
       <div>
+
         <div class="phone-title">
+
           Your Phone:
-          <strong>Put It Away.</strong>
+
+          <strong>
+            Put It Away.
+          </strong>
+
         </div>
 
         <div class="phone-copy">
           Phones may only be used when authorized by your instructor.
         </div>
+
       </div>
 
-      <button class="phone-info" data-topic="phone">
+
+      <button
+        class="phone-btn"
+        data-topic="phone"
+      >
         Why?
       </button>
 
     </div>
 
 
+    <!-- 10 SECOND CHECK -->
+
     <div class="ready-panel">
 
-      <div class="ready-head">
+      <div class="ready-title">
         10-Second Shop-Ready Check
       </div>
 
+
       <div class="ready-grid">
 
-        <div class="ready-item">
-          <div class="icon">🥽</div>
-          <div class="label">Glasses</div>
-          <div class="check">✓</div>
-        </div>
 
         <div class="ready-item">
-          <div class="icon">👕</div>
-          <div class="label">Shirt</div>
-          <div class="check">✓</div>
+          <div class="ready-icon">🥽</div>
+          <div class="ready-label">Glasses</div>
+          <div class="ready-check">✓</div>
         </div>
 
-        <div class="ready-item">
-          <div class="icon">👖</div>
-          <div class="label">Pants</div>
-          <div class="check">✓</div>
-        </div>
 
         <div class="ready-item">
-          <div class="icon">👟</div>
-          <div class="label">Safety Shoes</div>
-          <div class="check">✓</div>
+          <div class="ready-icon">👕</div>
+          <div class="ready-label">Shirt</div>
+          <div class="ready-check">✓</div>
         </div>
 
-        <div class="ready-item">
-          <div class="icon">💍</div>
-          <div class="label">Jewelry Off</div>
-          <div class="check">✓</div>
-        </div>
 
         <div class="ready-item">
-          <div class="icon">📵</div>
-          <div class="label">Phone Away</div>
-          <div class="check">✓</div>
+          <div class="ready-icon">👖</div>
+          <div class="ready-label">Pants</div>
+          <div class="ready-check">✓</div>
         </div>
+
+
+        <div class="ready-item">
+          <div class="ready-icon">👟</div>
+          <div class="ready-label">Safety Shoes</div>
+          <div class="ready-check">✓</div>
+        </div>
+
+
+        <div class="ready-item">
+          <div class="ready-icon">🚫💍</div>
+          <div class="ready-label">Jewelry Off</div>
+          <div class="ready-check">✓</div>
+        </div>
+
+
+        <div class="ready-item">
+          <div class="ready-icon">📵</div>
+          <div class="ready-label">Phone Away</div>
+          <div class="ready-check">✓</div>
+        </div>
+
 
       </div>
 
     </div>
 
+
   </section>
 
 
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
   <footer class="footer">
+
     The <strong>Right Gear.</strong>
+
     &nbsp; • &nbsp;
+
     The <strong>Right Mindset.</strong>
+
     &nbsp; • &nbsp;
+
     Ready for the Real World.
+
   </footer>
+
 
 </main>
 
 
-<!-- MODAL -->
+<!-- =========================================================
+     POPUP MODAL
+========================================================= -->
 
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+<div
+  class="modal-bg"
+  id="modalBg"
+  aria-hidden="true"
+>
 
-  <div class="modal" role="dialog" aria-modal="true">
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+  >
 
     <div class="modal-head">
 
@@ -1334,13 +2267,21 @@
         Why It Matters
       </h3>
 
-      <button class="modal-close" id="modalClose" aria-label="Close">
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Close"
+      >
         ×
       </button>
 
     </div>
 
-    <div class="modal-content" id="modalContent"></div>
+
+    <div
+      class="modal-content"
+      id="modalContent"
+    ></div>
 
   </div>
 
@@ -1351,221 +2292,332 @@
 
   const modalData = {
 
+
     glasses: {
+
       title: "Why Safety Glasses Matter",
+
       content: `
+
         <h4>Protect Your Eyes</h4>
 
         <p>
-          Automotive work can expose your eyes to metal fragments, dust,
-          chemicals, sparks, pressurized fluids, and flying debris.
+          Automotive work can expose your eyes to metal fragments,
+          dust, chemicals, sparks, pressurized fluids,
+          and flying debris.
         </p>
 
         <h4>Shop Expectation</h4>
 
         <p>
           Approved eye protection must be worn whenever required.
-          Shop-ready means having your eye protection before work begins.
+          Being shop ready means having your eye protection
+          before work begins.
         </p>
+
       `
+
     },
 
+
     footwear: {
+
       title: "Why Safety Footwear Matters",
+
       content: `
+
         <h4>Protect Your Feet</h4>
 
         <p>
-          Technicians work around wheels, brake components, tools,
-          equipment, and other heavy objects that may fall or be dropped.
+          Technicians work around wheels, brake components,
+          tools, equipment, and other heavy objects
+          that can fall or be dropped.
         </p>
 
-        <h4>Traction Matters</h4>
+        <h4>Stay on Your Feet</h4>
 
         <p>
-          Oil, coolant, water, and other fluids can make shop floors slippery.
-          Proper oil- and slip-resistant footwear improves traction.
+          Oil, coolant, water, and other fluids can make
+          shop floors slippery. Oil- and slip-resistant footwear
+          provides better traction.
         </p>
 
-        <h4>Automotive Style</h4>
+        <h4>Automotive Footwear</h4>
 
         <p>
-          Safety footwear can be a work shoe or work boot.
+          Safety footwear may be a work shoe or work boot.
           The expectation is professional automotive safety footwear.
         </p>
+
       `
+
     },
 
+
     jewelry: {
+
       title: "Why Jewelry Stays Off",
+
       content: `
+
         <h4>Entanglement Hazard</h4>
 
         <p>
-          Rings, necklaces, bracelets, and other jewelry can become caught
-          in tools, belts, fans, pulleys, and rotating equipment.
+          Rings, necklaces, bracelets, and other jewelry
+          can become caught in tools, belts, fans,
+          pulleys, and rotating equipment.
         </p>
 
         <h4>Electrical Hazard</h4>
 
         <p>
-          Metal jewelry can conduct electricity and increase the risk
-          of burns or electrical injury while working on vehicle systems.
+          Metal jewelry can conduct electricity
+          and increase the risk of burns or electrical injury.
         </p>
+
       `
+
     },
 
+
     shirt: {
+
       title: "Why the Work Shirt Matters",
+
       content: `
+
         <h4>Professional Appearance</h4>
 
         <p>
-          Your RMCTC work shirt identifies you as part of the Automotive
-          Technology program and reinforces the professional appearance
-          expected in the automotive industry.
+          Your RMCTC work shirt identifies you as part of
+          Automotive Technology and reinforces the professional
+          appearance expected in the automotive industry.
         </p>
 
         <h4>Shop Expectation</h4>
 
         <p>
-          Hoodies and bandanas are not permitted as part of the shop uniform.
+          Hoodies are not permitted as part of the shop uniform.
         </p>
+
       `
+
     },
 
+
     pants: {
+
       title: "Why Work Pants Matter",
+
       content: `
+
         <h4>Made for the Work Environment</h4>
 
         <p>
-          Work pants provide the durability and coverage needed
-          for automotive shop activities.
+          Work pants provide the durability and coverage
+          needed for automotive shop activities.
         </p>
 
         <h4>Professional Expectation</h4>
 
         <p>
-          Blue or black work pants help maintain a consistent,
-          professional shop uniform.
+          Blue or black work pants help maintain
+          a consistent professional shop uniform.
         </p>
+
       `
+
     },
 
-    hats: {
-      title: "Hat Expectations",
+
+    headwear: {
+
+      title: "Headwear Expectations",
+
       content: `
+
         <h4>Hats Are Permitted</h4>
 
         <p>
           Hats may be worn in Automotive Technology.
         </p>
 
+        <h4>No Bandannas</h4>
+
+        <p>
+          Bandannas are not permitted as shop headwear.
+        </p>
+
         <h4>Safety Comes First</h4>
 
         <p>
-          A hat must never interfere with required eye protection,
-          other PPE, visibility, or safe work around vehicles and equipment.
+          Any permitted headwear must not interfere with
+          safety glasses, other PPE, visibility,
+          or safe work around vehicles and equipment.
         </p>
+
       `
+
     },
 
+
     phone: {
+
       title: "Why Your Phone Stays Away",
+
       content: `
+
         <h4>Your Attention Matters</h4>
 
         <p>
-          You are working around vehicles, lifts, tools, moving equipment,
-          and other people. Your attention needs to remain on the work
+          You are working around vehicles, lifts,
+          tools, moving equipment, and other people.
+          Your attention needs to remain on the work
           happening around you.
         </p>
 
         <h4>Professional Expectation</h4>
 
         <p>
-          Unless your instructor authorizes its use for class or shop work,
+          Unless your instructor authorizes its use,
           your phone stays put away.
         </p>
+
       `
+
     }
 
   };
 
 
-  const modalBackdrop = document.getElementById("modalBackdrop");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalContent = document.getElementById("modalContent");
-  const modalClose = document.getElementById("modalClose");
+  const modalBg =
+    document.getElementById("modalBg");
+
+  const modalTitle =
+    document.getElementById("modalTitle");
+
+  const modalContent =
+    document.getElementById("modalContent");
+
+  const modalClose =
+    document.getElementById("modalClose");
 
 
   function openModal(topic) {
 
-    const data = modalData[topic];
+    const data =
+      modalData[topic];
 
     if (!data) return;
 
-    modalTitle.textContent = data.title;
+
+    modalTitle.textContent =
+      data.title;
+
 
     modalContent.innerHTML =
       data.content +
       `
-        <button class="got-it" id="gotItButton">
+        <button
+          class="got-it"
+          id="gotIt"
+        >
           Got It ✓
         </button>
       `;
 
-    modalBackdrop.classList.add("open");
-    modalBackdrop.setAttribute("aria-hidden", "false");
 
-    document.body.style.overflow = "hidden";
+    modalBg.classList.add("open");
+
+    modalBg.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
 
     document
-      .getElementById("gotItButton")
-      .addEventListener("click", closeModal);
+      .getElementById("gotIt")
+      .addEventListener(
+        "click",
+        closeModal
+      );
+
   }
 
 
   function closeModal() {
 
-    modalBackdrop.classList.remove("open");
-    modalBackdrop.setAttribute("aria-hidden", "true");
+    modalBg.classList.remove("open");
 
-    document.body.style.overflow = "";
+    modalBg.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow =
+      "";
+
   }
 
 
-  document.querySelectorAll("[data-topic]").forEach(button => {
+  document
+    .querySelectorAll("[data-topic]")
+    .forEach(button => {
 
-    button.addEventListener("click", () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-      openModal(button.dataset.topic);
+          openModal(
+            button.dataset.topic
+          );
+
+        }
+      );
 
     });
 
-  });
+
+  modalClose.addEventListener(
+    "click",
+    closeModal
+  );
 
 
-  modalClose.addEventListener("click", closeModal);
+  modalBg.addEventListener(
+    "click",
+    event => {
 
+      if (
+        event.target === modalBg
+      ) {
 
-  modalBackdrop.addEventListener("click", event => {
+        closeModal();
 
-    if (event.target === modalBackdrop) {
-      closeModal();
+      }
+
     }
+  );
 
-  });
 
+  document.addEventListener(
+    "keydown",
+    event => {
 
-  document.addEventListener("keydown", event => {
+      if (
+        event.key === "Escape"
+      ) {
 
-    if (event.key === "Escape") {
-      closeModal();
+        closeModal();
+
+      }
+
     }
-
-  });
+  );
 
 </script>
 
