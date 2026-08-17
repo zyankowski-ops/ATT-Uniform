@@ -281,7 +281,7 @@
       /*
         Do not allow the grid to stretch this box.
       */
-      align-self: center;
+      align-self: start;
     }
 
     .center-card img {
@@ -677,8 +677,22 @@
 
 
     /* =========================================================
-       RESPONSIVE
+       RESPONSIVE / CANVAS EMBED
     ========================================================= */
+
+    .center-card {
+      align-self: start;
+      margin-top: 0;
+    }
+
+    .poster-grid {
+      align-items: start;
+    }
+
+    .column {
+      align-self: start;
+      align-content: start;
+    }
 
     @media (max-width: 1000px) {
 
@@ -687,44 +701,68 @@
       }
 
       .image-header img {
+        width: 100%;
         height: auto;
         object-fit: initial;
       }
 
       .poster-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          minmax(220px, 1fr)
+          minmax(340px, 1.45fr)
+          minmax(220px, 1fr);
+
+        align-items: start;
+        gap: 10px;
+        padding: 10px 12px;
+      }
+
+      .column {
+        align-self: start;
+        align-content: start;
+        gap: 10px;
       }
 
       .center-card {
-        grid-column: 1 / -1;
-        grid-row: 1;
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        justify-self: stretch;
+        align-self: start;
+        margin: 0;
+      }
 
-        width: min(650px, 100%);
-        justify-self: center;
+      .center-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
       }
 
       .bottom-row {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1.05fr
+          1.35fr;
       }
 
     }
 
-
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
 
       .poster-grid {
         grid-template-columns: 1fr;
-
         padding: 8px;
       }
 
       .center-card {
         grid-column: auto;
-
+        grid-row: auto;
         width: 100%;
+        margin: 0;
       }
 
       .bottom-row {
+        grid-template-columns: 1fr;
         padding-left: 8px;
         padding-right: 8px;
       }
