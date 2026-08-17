@@ -8,17 +8,18 @@
 
   <style>
     :root {
-      --navy: #061625;
-      --navy2: #082b4d;
-      --blue: #0b4f8c;
-      --blue2: #1465ad;
-      --yellow: #f7c63c;
-      --yellow2: #dba800;
+      --navy: #071523;
+      --navy-2: #0b2f53;
+      --blue: #0d4f8b;
+      --blue-2: #1767ad;
+      --yellow: #f4c542;
+      --yellow-light: #ffd75a;
+      --red: #d92f27;
+      --green: #5fa735;
       --white: #ffffff;
-      --black: #101010;
+      --black: #111111;
       --gray: #eef3f6;
-      --red: #d92b23;
-      --green: #66aa35;
+      --line: #c8d5df;
     }
 
     * {
@@ -47,217 +48,45 @@
       background: white;
       min-height: 100vh;
       overflow: hidden;
-      box-shadow: 0 0 28px rgba(0,0,0,.15);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     }
 
 
     /* =========================================================
-       HEADER
+       IMAGE HEADER
     ========================================================= */
 
-    .header {
-      position: relative;
-      min-height: 170px;
-
-      display: grid;
-      grid-template-columns: 210px 1fr 205px;
-      align-items: center;
-
-      gap: 6px;
-
-      padding: 10px 18px;
-
-      color: white;
-
-      background:
-        radial-gradient(
-          circle at 50% 130%,
-          rgba(20,101,173,.42),
-          transparent 42%
-        ),
-        linear-gradient(
-          135deg,
-          #05111e,
-          #0a2139 58%,
-          #06131f
-        );
-
+    .image-header {
+      width: 100%;
+      background: var(--navy);
       border-bottom: 4px solid var(--yellow);
+      overflow: hidden;
     }
 
-
-    /* ---------- LOGO ---------- */
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .logo {
-      width: 145px;
-      height: 145px;
-
-      border-radius: 50%;
-
-      position: relative;
-
-      display: grid;
-      place-items: center;
-
-      background:
-        radial-gradient(
-          circle,
-          #0d0d0d 0 46%,
-          #252525 47% 51%,
-          #f1b81b 52% 66%,
-          #111 67% 100%
-        );
-
-      border: 3px solid #556575;
-
-      box-shadow:
-        0 8px 15px rgba(0,0,0,.45),
-        inset 0 0 15px #000;
-    }
-
-    .logo::before {
-      content: "⚙";
-
-      position: absolute;
-
-      font-size: 7.3rem;
-      line-height: 1;
-
-      color: var(--yellow);
-
-      z-index: 1;
-    }
-
-    .logo::after {
-      content: "🔧";
-
-      position: absolute;
-
-      top: 7px;
-      left: 20px;
-
-      font-size: 3.2rem;
-
-      transform: rotate(-42deg);
-
-      z-index: 2;
-
-      filter: grayscale(1);
-    }
-
-    .logo-text {
-      position: relative;
-
-      z-index: 4;
-
-      padding: 5px 8px;
-
-      background: rgba(0,0,0,.73);
-
-      color: white;
-
-      font-size: 1.55rem;
-
-      font-weight: 950;
-      font-style: italic;
-
-      letter-spacing: -1px;
-
-      text-shadow:
-        2px 2px #000,
-        -1px -1px #555;
-
-      transform: skew(-8deg);
-    }
-
-
-    /* ---------- MAIN TITLE ---------- */
-
-    .headline {
-      text-align: center;
-    }
-
-    .headline h1 {
-      margin: 0;
-
-      font-size: clamp(3rem, 5vw, 5.3rem);
-
-      line-height: .88;
-
-      font-weight: 950;
-
-      letter-spacing: -3px;
-
-      text-transform: uppercase;
-    }
-
-    .headline h1 span {
-      color: var(--yellow);
-    }
-
-    .tagline {
-      margin-top: 10px;
-
-      font-size: clamp(1.05rem, 1.9vw, 1.6rem);
-
-      font-weight: 950;
-
-      font-style: italic;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.5px;
-    }
-
-    .tagline strong {
-      color: var(--yellow);
-    }
-
-
-    /* ---------- RIGHT MOTTO ---------- */
-
-    .motto {
-      text-align: right;
-
-      font-size: .95rem;
-
-      font-style: italic;
-
-      font-weight: 900;
-
-      line-height: 1.5;
-
-      text-transform: uppercase;
-    }
-
-    .motto strong {
-      color: var(--yellow);
+    .image-header img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
 
     /* =========================================================
-       MAIN INFOGRAPHIC
+       MAIN INFOGRAPHIC AREA
     ========================================================= */
 
-    .poster {
-      padding: 10px 12px;
-
+    .poster-grid {
       display: grid;
 
       grid-template-columns:
-        minmax(250px, 1fr)
-        minmax(430px, 1.55fr)
-        minmax(250px, 1fr);
+        minmax(255px, 1fr)
+        minmax(420px, 1.55fr)
+        minmax(255px, 1fr);
 
       gap: 12px;
 
-      align-items: center;
+      padding: 10px 12px;
+
+      align-items: stretch;
 
       background:
         linear-gradient(
@@ -266,75 +95,81 @@
         ),
         repeating-linear-gradient(
           45deg,
-          #dfe8ef 0,
-          #dfe8ef 1px,
+          #dfe7ed 0,
+          #dfe7ed 1px,
           transparent 1px,
-          transparent 17px
+          transparent 16px
         );
     }
 
 
     /* =========================================================
-       CARDS
+       POLICY COLUMNS
     ========================================================= */
 
     .column {
       display: grid;
       gap: 10px;
+      align-content: stretch;
     }
 
+
+    /* =========================================================
+       POLICY CARDS
+    ========================================================= */
+
     .card {
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
 
       background: white;
 
       border: 3px solid var(--blue);
 
-      border-radius: 15px;
+      border-radius: 14px;
 
-      box-shadow:
-        0 5px 12px rgba(0,0,0,.13);
+      overflow: hidden;
+
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
     }
 
     .card-head {
-      min-height: 53px;
-
-      padding: 7px 11px;
-
       display: flex;
-
       align-items: center;
 
       gap: 9px;
+
+      min-height: 50px;
+
+      padding: 7px 10px;
 
       color: white;
 
       background:
         linear-gradient(
           90deg,
-          #07335f,
-          #1263aa
+          #07345f,
+          #1767ad
         );
     }
 
     .card-icon {
-      width: 48px;
-
-      flex: 0 0 48px;
+      width: 46px;
+      flex: 0 0 46px;
 
       text-align: center;
 
-      font-size: 2rem;
+      font-size: 1.85rem;
     }
 
-    .card-title {
+    .card-title-wrap {
       flex: 1;
     }
 
-    .card-title h2 {
+    .card-title-wrap h2 {
       margin: 0;
 
-      font-size: 1.24rem;
+      font-size: 1.2rem;
 
       line-height: 1;
 
@@ -356,7 +191,7 @@
 
       border-radius: 3px;
 
-      font-size: .66rem;
+      font-size: 0.66rem;
 
       font-weight: 900;
 
@@ -364,18 +199,17 @@
     }
 
     .card-body {
-      min-height: 69px;
+      flex: 1;
 
       padding: 9px 12px 6px;
 
-      font-size: .8rem;
+      font-size: 0.8rem;
 
-      line-height: 1.27;
+      line-height: 1.28;
     }
 
     .card-body ul {
       margin: 0;
-
       padding-left: 18px;
     }
 
@@ -385,16 +219,15 @@
 
     .danger {
       color: var(--red);
-
       font-weight: 900;
     }
 
-    .info-button {
+    .info-btn {
       width: calc(100% - 20px);
 
-      margin: 2px 10px 9px;
+      margin: 3px 10px 9px;
 
-      padding: 7px;
+      padding: 7px 10px;
 
       border: 0;
 
@@ -404,296 +237,56 @@
 
       color: #111;
 
-      cursor: pointer;
-
-      font-size: .72rem;
+      font-size: 0.72rem;
 
       font-weight: 950;
 
       text-transform: uppercase;
 
-      box-shadow:
-        inset 0 -2px 0 rgba(0,0,0,.15);
+      cursor: pointer;
+
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.15);
+
+      transition:
+        background .15s ease,
+        transform .15s ease;
     }
 
-    .info-button:hover,
-    .info-button:focus {
-      background: #ffd85a;
-
-      outline: 3px solid rgba(13,79,139,.22);
+    .info-btn:hover,
+    .info-btn:focus {
+      background: var(--yellow-light);
+      transform: translateY(-1px);
+      outline: 3px solid rgba(13,79,139,.2);
     }
 
 
     /* =========================================================
-       COMIC CENTER
+       CENTER GRAPHIC
     ========================================================= */
 
-    .comic-stage {
+    .center-card {
       position: relative;
-
-      height: 535px;
 
       overflow: hidden;
 
-      border: 4px solid #0a4175;
+      border: 4px solid var(--blue);
 
       border-radius: 18px;
 
-      background:
-        linear-gradient(
-          rgba(226,238,246,.82),
-          rgba(183,204,219,.84)
-        );
+      background: #101820;
 
-      box-shadow:
-        inset 0 0 30px rgba(0,0,0,.12);
+      box-shadow: 0 6px 16px rgba(0,0,0,.16);
     }
 
-
-    /* garage window / lift styling */
-
-    .shop-bg {
-      position: absolute;
-
-      inset: 0;
-
-      opacity: .28;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0 18%,
-          #123c5c 18% 19%,
-          transparent 19% 49%,
-          #123c5c 49% 50%,
-          transparent 50% 80%,
-          #123c5c 80% 81%,
-          transparent 81%
-        ),
-        linear-gradient(
-          0deg,
-          transparent 0 78%,
-          #123c5c 78% 79%,
-          transparent 79%
-        );
-    }
-
-
-    /* comic halftone texture */
-
-    .comic-stage::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      pointer-events: none;
-
-      opacity: .12;
-
-      background-image:
-        radial-gradient(
-          #000 1px,
-          transparent 1px
-        );
-
-      background-size:
-        7px 7px;
-    }
-
-
-    /* starbursts */
-
-    .burst {
-      position: absolute;
-
-      top: 110px;
-
-      width: 270px;
-      height: 270px;
-
-      border-radius: 50%;
-
-      opacity: .5;
-
-      background:
-        repeating-conic-gradient(
-          transparent 0deg 5deg,
-          currentColor 5deg 8deg
-        );
-    }
-
-    .burst.blue {
-      left: 14px;
-
-      color: #1171bf;
-    }
-
-    .burst.yellow {
-      right: 12px;
-
-      color: #f3c627;
-    }
-
-
-    /* female speech bubble only */
-
-    .female-bubble {
-      position: absolute;
-
-      top: 35px;
-      right: 38px;
-
-      z-index: 20;
-
-      width: 145px;
-
-      padding: 19px 12px;
-
-      text-align: center;
-
-      background: white;
-
-      border: 5px solid #111;
-
-      border-radius: 50%;
-
-      color: #111;
-
-      font-size: 1.55rem;
-
-      font-weight: 950;
-
-      line-height: .9;
-
-      text-transform: uppercase;
-
-      transform: rotate(4deg);
-
-      box-shadow:
-        5px 7px 0 rgba(0,0,0,.18);
-    }
-
-    .female-bubble strong {
-      color: var(--blue);
-    }
-
-    .female-bubble::before {
-      content: "";
-
-      position: absolute;
-
-      bottom: -30px;
-      left: 24px;
-
-      border-top: 36px solid #111;
-
-      border-right: 27px solid transparent;
-    }
-
-    .female-bubble::after {
-      content: "";
-
-      position: absolute;
-
-      bottom: -21px;
-      left: 29px;
-
-      border-top: 29px solid white;
-
-      border-right: 21px solid transparent;
-    }
-
-
-    /* =========================================================
-       VECTOR CHARACTERS
-    ========================================================= */
-
-    .characters {
-      position: absolute;
-
-      inset: 0;
-
-      display: flex;
-
-      align-items: flex-end;
-
-      justify-content: center;
-
-      padding-bottom: 8px;
-
-      z-index: 10;
-    }
-
-    .comic-person {
-      width: 230px;
-      height: 455px;
-    }
-
-    .male-svg {
-      margin-right: -28px;
-
-      transform: rotate(-2deg);
-    }
-
-    .female-svg {
-      margin-left: -28px;
-
-      transform: rotate(2deg);
-    }
-
-
-    /* Thick comic outlines */
-
-    .comic-line {
-      stroke: #111;
-
-      stroke-width: 7;
-
-      stroke-linejoin: round;
-
-      stroke-linecap: round;
-    }
-
-    .comic-line-small {
-      stroke: #111;
-
-      stroke-width: 5;
-
-      stroke-linejoin: round;
-
-      stroke-linecap: round;
-    }
-
-
-    /* =========================================================
-       CENTER CAPTION
-    ========================================================= */
-
-    .center-caption {
-      position: absolute;
-
-      bottom: 7px;
-      left: 0;
-
-      z-index: 20;
+    .center-card img {
+      display: block;
 
       width: 100%;
+      height: 100%;
 
-      text-align: center;
+      object-fit: cover;
 
-      color: white;
-
-      font-size: .78rem;
-
-      font-weight: 950;
-
-      text-transform: uppercase;
-
-      text-shadow:
-        2px 2px 0 #000,
-        -1px -1px 0 #000;
+      object-position: center;
     }
 
 
@@ -710,19 +303,21 @@
 
       gap: 10px;
 
-      padding: 0 12px 9px;
+      padding: 0 12px 10px;
+
+      background: white;
     }
 
 
-    /* ---------- PHONE ---------- */
+    /* =========================================================
+       PHONE PANEL
+    ========================================================= */
 
     .phone-panel {
-      min-height: 87px;
-
       display: grid;
 
       grid-template-columns:
-        70px
+        68px
         1fr
         auto;
 
@@ -730,29 +325,30 @@
 
       gap: 12px;
 
-      padding: 8px 11px;
+      min-height: 88px;
 
-      background:
-        linear-gradient(
-          90deg,
-          #fff1ab,
-          #f7c638
-        );
+      padding: 9px 11px;
 
       border: 3px solid #111;
 
       border-radius: 14px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff3b0,
+          #f4c542
+        );
     }
 
     .phone-stop {
-      width: 64px;
-      height: 64px;
+      position: relative;
+
+      width: 62px;
+      height: 62px;
 
       display: grid;
-
       place-items: center;
-
-      position: relative;
 
       border-radius: 50%;
 
@@ -768,7 +364,7 @@
 
       position: absolute;
 
-      width: 65px;
+      width: 64px;
       height: 6px;
 
       background: red;
@@ -784,50 +380,62 @@
       font-weight: 950;
 
       text-transform: uppercase;
+
+      line-height: 1;
     }
 
     .phone-title strong {
       display: block;
 
-      margin-top: 2px;
+      margin-top: 3px;
 
       color: var(--red);
 
-      font-size: 1.32rem;
+      font-size: 1.35rem;
 
       font-style: italic;
     }
 
     .phone-copy {
-      margin-top: 3px;
+      margin-top: 4px;
 
-      font-size: .72rem;
+      font-size: 0.73rem;
 
       font-weight: 700;
+
+      line-height: 1.2;
     }
 
     .phone-btn {
-      padding: 8px 13px;
-
       border: 0;
 
       border-radius: 999px;
 
-      background: var(--navy2);
+      padding: 8px 13px;
+
+      background: var(--navy-2);
 
       color: white;
 
-      cursor: pointer;
-
-      font-size: .7rem;
+      font-size: 0.72rem;
 
       font-weight: 900;
 
       text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .phone-btn:hover,
+    .phone-btn:focus {
+      background: var(--blue);
+      outline: 3px solid rgba(13,79,139,.2);
     }
 
 
-    /* ---------- READY CHECK ---------- */
+    /* =========================================================
+       READY CHECK
+    ========================================================= */
 
     .ready-panel {
       overflow: hidden;
@@ -835,24 +443,28 @@
       border: 3px solid var(--blue);
 
       border-radius: 14px;
+
+      background: white;
     }
 
     .ready-title {
-      padding: 5px;
+      padding: 5px 8px;
 
-      background: #101010;
+      background: #111;
 
       color: white;
 
       text-align: center;
 
-      font-size: .87rem;
+      font-size: 0.88rem;
 
       font-weight: 950;
 
       font-style: italic;
 
       text-transform: uppercase;
+
+      letter-spacing: 0.6px;
     }
 
     .ready-grid {
@@ -860,22 +472,20 @@
 
       grid-template-columns:
         repeat(6, 1fr);
-
-      background: white;
     }
 
     .ready-item {
-      min-height: 59px;
-
-      padding: 5px 2px;
+      min-height: 60px;
 
       display: grid;
 
       place-items: center;
 
-      border-right: 1px solid #bdcad4;
+      padding: 5px 3px;
 
       text-align: center;
+
+      border-right: 1px solid var(--line);
     }
 
     .ready-item:last-child {
@@ -883,17 +493,16 @@
     }
 
     .ready-icon {
-      font-size: 1.35rem;
-
+      font-size: 1.4rem;
       line-height: 1;
     }
 
     .ready-label {
-      font-size: .56rem;
-
-      font-weight: 900;
+      font-size: 0.57rem;
 
       line-height: 1.05;
+
+      font-weight: 900;
 
       text-transform: uppercase;
     }
@@ -901,7 +510,7 @@
     .ready-check {
       color: var(--green);
 
-      font-size: .9rem;
+      font-size: 0.9rem;
 
       font-weight: 950;
     }
@@ -914,19 +523,19 @@
     .footer {
       padding: 6px 10px;
 
-      text-align: center;
-
       background: var(--navy);
 
       color: white;
 
-      font-size: .78rem;
+      text-align: center;
+
+      font-size: 0.78rem;
 
       font-weight: 900;
 
-      letter-spacing: 1px;
-
       text-transform: uppercase;
+
+      letter-spacing: 1px;
     }
 
     .footer strong {
@@ -965,28 +574,29 @@
 
       overflow: hidden;
 
-      background: white;
-
       border-radius: 15px;
 
-      box-shadow:
-        0 22px 60px rgba(0,0,0,.4);
+      background: white;
+
+      box-shadow: 0 22px 60px rgba(0,0,0,.4);
     }
 
     .modal-head {
       display: flex;
 
+      align-items: center;
+
       justify-content: space-between;
 
-      align-items: center;
+      gap: 12px;
 
       padding: 13px 15px;
 
       background:
         linear-gradient(
           90deg,
-          #07335f,
-          #1263aa
+          #07345f,
+          #1767ad
         );
 
       color: white;
@@ -1015,7 +625,7 @@
     .modal-content {
       padding: 16px;
 
-      font-size: .9rem;
+      font-size: 0.9rem;
 
       line-height: 1.4;
     }
@@ -1025,7 +635,7 @@
 
       color: var(--blue);
 
-      font-size: .8rem;
+      font-size: 0.8rem;
 
       text-transform: uppercase;
     }
@@ -1041,17 +651,17 @@
 
       border: 0;
 
-      border-radius: 7px;
+      border-radius: 8px;
 
       background: var(--yellow);
 
       color: #111;
 
-      cursor: pointer;
-
       font-weight: 950;
 
       text-transform: uppercase;
+
+      cursor: pointer;
     }
 
 
@@ -1061,21 +671,15 @@
 
     @media (max-width: 1000px) {
 
-      .header {
-        grid-template-columns: 160px 1fr;
-      }
-
-      .motto {
-        display: none;
-      }
-
-      .poster {
+      .poster-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .comic-stage {
+      .center-card {
         grid-column: 1 / -1;
         grid-row: 1;
+
+        max-height: 600px;
       }
 
       .bottom-row {
@@ -1084,55 +688,16 @@
 
     }
 
-
     @media (max-width: 650px) {
 
-      .header {
+      .poster-grid {
         grid-template-columns: 1fr;
-
-        min-height: auto;
-
-        text-align: center;
+        padding: 8px;
       }
 
-      .brand {
-        justify-content: center;
-      }
-
-      .logo {
-        width: 110px;
-        height: 110px;
-      }
-
-      .logo::before {
-        font-size: 5.7rem;
-      }
-
-      .headline h1 {
-        font-size: 2.5rem;
-      }
-
-      .poster {
-        grid-template-columns: 1fr;
-      }
-
-      .comic-stage {
+      .center-card {
         grid-column: auto;
-
-        height: 470px;
-      }
-
-      .comic-person {
-        width: 190px;
-        height: 410px;
-      }
-
-      .female-bubble {
-        width: 115px;
-
-        right: 12px;
-
-        font-size: 1.2rem;
+        max-height: none;
       }
 
       .bottom-row {
@@ -1141,7 +706,7 @@
       }
 
       .phone-panel {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 62px 1fr;
       }
 
       .phone-btn {
@@ -1152,7 +717,12 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
+      .ready-item {
+        border-bottom: 1px solid var(--line);
+      }
+
     }
+
   </style>
 </head>
 
@@ -1163,51 +733,24 @@
 
 
   <!-- =======================================================
-       HEADER
+       HEADER IMAGE
   ======================================================== -->
 
-  <header class="header">
+  <header class="image-header">
 
-    <div class="brand">
-
-      <div class="logo">
-        <div class="logo-text">
-          RMCTC
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="headline">
-
-      <h1>
-        Are You
-        <span>Shop Ready?</span>
-      </h1>
-
-      <div class="tagline">
-        <strong>ALL DAY.</strong>
-        EVERY DAY.
-      </div>
-
-    </div>
-
-
-    <div class="motto">
-      Be Prepared.<br>
-      Be Professional.<br>
-      Be <strong>Shop Ready.</strong>
-    </div>
+    <img
+      src="shop-ready-header.png"
+      alt="RMCTC Automotive Technology - Are You Shop Ready? All Day. Every Day."
+    >
 
   </header>
 
 
   <!-- =======================================================
-       MAIN POSTER
+       MAIN INFOGRAPHIC
   ======================================================== -->
 
-  <section class="poster">
+  <section class="poster-grid">
 
 
     <!-- =======================
@@ -1227,7 +770,7 @@
             🥽
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Eyes
@@ -1268,7 +811,7 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="glasses"
         >
           ⓘ Why It Matters
@@ -1287,7 +830,7 @@
             👟
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Feet
@@ -1328,7 +871,7 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="footwear"
         >
           ⓘ Why It Matters
@@ -1347,7 +890,7 @@
             🚫💍
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Jewelry
@@ -1377,7 +920,7 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="jewelry"
         >
           ⓘ Why It Matters
@@ -1385,559 +928,19 @@
 
       </article>
 
-
     </div>
 
 
     <!-- =======================
-         COMIC CENTER
+         CENTER IMAGE
     ======================== -->
 
-    <section class="comic-stage">
-
-      <div class="shop-bg"></div>
-
-      <div class="burst blue"></div>
-
-      <div class="burst yellow"></div>
-
-
-      <!-- Header asks the question now.
-           Only the female answers it. -->
-
-      <div class="female-bubble">
-        <strong>WE ARE!</strong>
-      </div>
-
-
-      <div class="characters">
-
-
-        <!-- =================================
-             MALE TECHNICIAN
-        ================================== -->
-
-        <svg
-          class="comic-person male-svg"
-          viewBox="0 0 230 455"
-          aria-label="Male automotive technology student"
-        >
-
-          <!-- legs -->
-
-          <path
-            class="comic-line"
-            fill="#192431"
-            d="
-              M70 278
-              L111 278
-              L110 420
-              L69 420
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#192431"
-            d="
-              M114 278
-              L154 278
-              L161 420
-              L119 420
-              Z
-            "
-          />
-
-
-          <!-- shoes -->
-
-          <path
-            class="comic-line"
-            fill="#111820"
-            d="
-              M63 415
-              L111 415
-              L112 438
-              Q90 450 58 438
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#111820"
-            d="
-              M119 415
-              L161 415
-              L170 439
-              Q147 448 116 438
-              Z
-            "
-          />
-
-
-          <!-- torso -->
-
-          <path
-            class="comic-line"
-            fill="#0d2943"
-            d="
-              M57 121
-              Q115 93 172 122
-              L164 292
-              L64 292
-              Z
-            "
-          />
-
-
-          <!-- blue side panels -->
-
-          <path
-            fill="#145991"
-            d="
-              M59 126
-              L83 117
-              L84 285
-              L65 287
-              Z
-            "
-          />
-
-          <path
-            fill="#145991"
-            d="
-              M146 115
-              L169 126
-              L163 287
-              L145 284
-              Z
-            "
-          />
-
-
-          <!-- RMCTC patch -->
-
-          <rect
-            x="80"
-            y="155"
-            width="47"
-            height="22"
-            rx="3"
-            fill="#ffffff"
-            stroke="#111"
-            stroke-width="3"
-          />
-
-          <text
-            x="103"
-            y="170"
-            text-anchor="middle"
-            font-size="13"
-            font-family="Arial"
-            font-weight="900"
-            fill="#0d4f8b"
-          >
-            RMCTC
-          </text>
-
-
-          <!-- head -->
-
-          <ellipse
-            class="comic-line"
-            cx="114"
-            cy="88"
-            rx="47"
-            ry="51"
-            fill="#c89068"
-          />
-
-
-          <!-- hair -->
-
-          <path
-            class="comic-line"
-            fill="#241914"
-            d="
-              M66 74
-              Q64 24 112 23
-              Q164 25 162 74
-              Q145 48 116 51
-              Q85 45 66 74
-              Z
-            "
-          />
-
-
-          <!-- safety glasses -->
-
-          <rect
-            class="comic-line-small"
-            x="70"
-            y="77"
-            width="42"
-            height="22"
-            rx="8"
-            fill="#dff3fa"
-            opacity=".85"
-          />
-
-          <rect
-            class="comic-line-small"
-            x="116"
-            y="77"
-            width="42"
-            height="22"
-            rx="8"
-            fill="#dff3fa"
-            opacity=".85"
-          />
-
-          <line
-            x1="111"
-            y1="87"
-            x2="117"
-            y2="87"
-            stroke="#111"
-            stroke-width="5"
-          />
-
-
-          <!-- confident eyebrow / mouth -->
-
-          <path
-            d="M87 69 Q98 65 106 69"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-          <path
-            d="M122 69 Q134 65 143 70"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-          <path
-            d="M99 111 Q116 123 135 108"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-
-          <!-- crossed arms -->
-
-          <path
-            class="comic-line"
-            fill="#c89068"
-            d="
-              M55 168
-              Q48 185 63 194
-              L139 229
-              Q151 234 159 221
-              Q165 207 150 201
-              L80 166
-              Q65 158 55 168
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#c89068"
-            d="
-              M169 168
-              Q179 184 164 195
-              L89 229
-              Q74 235 68 221
-              Q63 207 78 201
-              L147 166
-              Q161 158 169 168
-              Z
-            "
-          />
-
-        </svg>
-
-
-        <!-- =================================
-             FEMALE TECHNICIAN
-        ================================== -->
-
-        <svg
-          class="comic-person female-svg"
-          viewBox="0 0 230 455"
-          aria-label="Female automotive technology student"
-        >
-
-          <!-- legs -->
-
-          <path
-            class="comic-line"
-            fill="#192431"
-            d="
-              M72 278
-              L112 278
-              L109 420
-              L69 420
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#192431"
-            d="
-              M116 278
-              L156 278
-              L162 420
-              L121 420
-              Z
-            "
-          />
-
-
-          <!-- shoes -->
-
-          <path
-            class="comic-line"
-            fill="#111820"
-            d="
-              M64 415
-              L110 415
-              L111 438
-              Q87 449 58 438
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#111820"
-            d="
-              M120 415
-              L163 415
-              L171 439
-              Q148 448 118 438
-              Z
-            "
-          />
-
-
-          <!-- torso -->
-
-          <path
-            class="comic-line"
-            fill="#0d2943"
-            d="
-              M58 121
-              Q115 95 171 121
-              L164 292
-              L64 292
-              Z
-            "
-          />
-
-
-          <!-- blue side panels -->
-
-          <path
-            fill="#145991"
-            d="
-              M60 126
-              L83 117
-              L84 285
-              L65 287
-              Z
-            "
-          />
-
-          <path
-            fill="#145991"
-            d="
-              M146 116
-              L169 126
-              L163 287
-              L145 284
-              Z
-            "
-          />
-
-
-          <!-- RMCTC patch -->
-
-          <rect
-            x="81"
-            y="154"
-            width="48"
-            height="22"
-            rx="3"
-            fill="#ffffff"
-            stroke="#111"
-            stroke-width="3"
-          />
-
-          <text
-            x="105"
-            y="169"
-            text-anchor="middle"
-            font-size="13"
-            font-family="Arial"
-            font-weight="900"
-            fill="#0d4f8b"
-          >
-            RMCTC
-          </text>
-
-
-          <!-- hair behind head -->
-
-          <path
-            class="comic-line"
-            fill="#ae7042"
-            d="
-              M68 73
-              Q62 24 113 19
-              Q165 22 164 78
-              L171 167
-              Q145 153 142 86
-              Z
-            "
-          />
-
-
-          <!-- head -->
-
-          <ellipse
-            class="comic-line"
-            cx="113"
-            cy="88"
-            rx="45"
-            ry="50"
-            fill="#d8a37c"
-          />
-
-
-          <!-- hair front -->
-
-          <path
-            fill="#ae7042"
-            stroke="#111"
-            stroke-width="6"
-            d="
-              M70 69
-              Q72 22 116 23
-              Q150 24 160 64
-              Q136 48 108 50
-              Q87 48 70 69
-              Z
-            "
-          />
-
-
-          <!-- safety glasses -->
-
-          <rect
-            class="comic-line-small"
-            x="71"
-            y="76"
-            width="40"
-            height="22"
-            rx="8"
-            fill="#dff3fa"
-            opacity=".85"
-          />
-
-          <rect
-            class="comic-line-small"
-            x="115"
-            y="76"
-            width="40"
-            height="22"
-            rx="8"
-            fill="#dff3fa"
-            opacity=".85"
-          />
-
-          <line
-            x1="111"
-            y1="86"
-            x2="116"
-            y2="86"
-            stroke="#111"
-            stroke-width="5"
-          />
-
-
-          <!-- face -->
-
-          <path
-            d="M87 69 Q97 65 106 69"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-          <path
-            d="M121 69 Q132 65 142 69"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-          <path
-            d="M97 111 Q113 124 132 108"
-            stroke="#111"
-            stroke-width="4"
-            fill="none"
-          />
-
-
-          <!-- crossed arms -->
-
-          <path
-            class="comic-line"
-            fill="#d8a37c"
-            d="
-              M56 168
-              Q48 184 63 195
-              L139 229
-              Q153 234 159 221
-              Q164 207 149 201
-              L80 166
-              Q66 159 56 168
-              Z
-            "
-          />
-
-          <path
-            class="comic-line"
-            fill="#d8a37c"
-            d="
-              M169 168
-              Q178 184 164 195
-              L89 229
-              Q74 235 68 221
-              Q63 207 78 201
-              L147 166
-              Q161 158 169 168
-              Z
-            "
-          />
-
-        </svg>
-
-
-      </div>
-
-
-      <div class="center-caption">
-        Proper Uniform • Proper PPE • Ready to Work
-      </div>
+    <section class="center-card">
+
+      <img
+        src="shopcenter.png"
+        alt="RMCTC Automotive Technology students in proper uniform and PPE"
+      >
 
     </section>
 
@@ -1959,7 +962,7 @@
             👕
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Shirt
@@ -1996,7 +999,7 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="shirt"
         >
           ⓘ Why It Matters
@@ -2015,7 +1018,7 @@
             👖
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Pants
@@ -2044,7 +1047,7 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="pants"
         >
           ⓘ Why It Matters
@@ -2063,7 +1066,7 @@
             🧢
           </div>
 
-          <div class="card-title">
+          <div class="card-title-wrap">
 
             <h2>
               Headwear
@@ -2101,14 +1104,13 @@
 
 
         <button
-          class="info-button"
+          class="info-btn"
           data-topic="headwear"
         >
           ⓘ Shop Expectation
         </button>
 
       </article>
-
 
     </div>
 
@@ -2117,7 +1119,7 @@
 
 
   <!-- =======================================================
-       BOTTOM
+       BOTTOM ROW
   ======================================================== -->
 
   <section class="bottom-row">
@@ -2144,8 +1146,12 @@
 
         </div>
 
+
         <div class="phone-copy">
-          Phones may only be used when authorized by your instructor.
+
+          Phones may only be used when authorized
+          by your instructor.
+
         </div>
 
       </div>
@@ -2174,44 +1180,104 @@
 
 
         <div class="ready-item">
-          <div class="ready-icon">🥽</div>
-          <div class="ready-label">Glasses</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            🥽
+          </div>
+
+          <div class="ready-label">
+            Glasses
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
         <div class="ready-item">
-          <div class="ready-icon">👕</div>
-          <div class="ready-label">Shirt</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            👕
+          </div>
+
+          <div class="ready-label">
+            Shirt
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
         <div class="ready-item">
-          <div class="ready-icon">👖</div>
-          <div class="ready-label">Pants</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            👖
+          </div>
+
+          <div class="ready-label">
+            Pants
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
         <div class="ready-item">
-          <div class="ready-icon">👟</div>
-          <div class="ready-label">Safety Shoes</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            👟
+          </div>
+
+          <div class="ready-label">
+            Safety Shoes
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
         <div class="ready-item">
-          <div class="ready-icon">🚫💍</div>
-          <div class="ready-label">Jewelry Off</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            🚫💍
+          </div>
+
+          <div class="ready-label">
+            Jewelry Off
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
         <div class="ready-item">
-          <div class="ready-icon">📵</div>
-          <div class="ready-label">Phone Away</div>
-          <div class="ready-check">✓</div>
+
+          <div class="ready-icon">
+            📵
+          </div>
+
+          <div class="ready-label">
+            Phone Away
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
         </div>
 
 
