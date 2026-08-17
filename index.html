@@ -677,7 +677,7 @@
 
 
     /* =========================================================
-       CENTER COLUMN UTILITIES
+       CENTER COLUMN / FILL SPACE
     ========================================================= */
 
     .center-column {
@@ -697,16 +697,20 @@
     .center-tools .phone-panel,
     .center-tools .ready-panel {
       width: 100%;
-      box-sizing: border-box;
       margin: 0;
+    }
+
+    .center-tools .phone-panel {
+      grid-template-columns: 62px 1fr auto;
+      min-height: 82px;
     }
 
     .center-tools .ready-grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .center-tools .phone-panel {
-      grid-template-columns: 62px 1fr auto;
+    .center-tools .ready-item {
+      min-height: 54px;
     }
 
     /* =========================================================
@@ -756,12 +760,6 @@
         gap: 10px;
       }
 
-      .center-column {
-        grid-column: auto;
-        grid-row: auto;
-        width: 100%;
-      }
-
       .center-card {
         grid-column: auto;
         grid-row: auto;
@@ -793,9 +791,14 @@
         padding: 8px;
       }
 
-      .center-card {
+      .center-column {
         grid-column: auto;
         grid-row: auto;
+        width: 100%;
+        margin: 0;
+      }
+
+      .center-card {
         width: 100%;
         margin: 0;
       }
@@ -1050,162 +1053,163 @@
 
       </section>
 
+
       <div class="center-tools">
 
 <div class="phone-panel">
-        
-              <div class="phone-stop">
-                📱
-              </div>
-        
-        
-              <div>
-        
-                <div class="phone-title">
-        
-                  Your Phone:
-        
-                  <strong>
-                    Put It Away.
-                  </strong>
-        
-                </div>
-        
-        
-                <div class="phone-copy">
-        
-                  Phones may only be used when authorized
-                  by your instructor.
-        
-                </div>
-        
-              </div>
-        
-        
-              <button
-                class="phone-btn"
-                data-topic="phone"
-              >
-                Why?
-              </button>
-        
-            </div>
+
+      <div class="phone-stop">
+        📱
+      </div>
+
+
+      <div>
+
+        <div class="phone-title">
+
+          Your Phone:
+
+          <strong>
+            Put It Away.
+          </strong>
+
+        </div>
+
+
+        <div class="phone-copy">
+
+          Phones may only be used when authorized
+          by your instructor.
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="phone-btn"
+        data-topic="phone"
+      >
+        Why?
+      </button>
+
+    </div>
 
 <div class="ready-panel">
-        
-              <div class="ready-title">
-                10-Second Shop-Ready Check
-              </div>
-        
-        
-              <div class="ready-grid">
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    🥽
-                  </div>
-        
-                  <div class="ready-label">
-                    Glasses
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    👕
-                  </div>
-        
-                  <div class="ready-label">
-                    Shirt
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    👖
-                  </div>
-        
-                  <div class="ready-label">
-                    Pants
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    👟
-                  </div>
-        
-                  <div class="ready-label">
-                    Safety Shoes
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    🚫💍
-                  </div>
-        
-                  <div class="ready-label">
-                    Jewelry Off
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-                <div class="ready-item">
-        
-                  <div class="ready-icon">
-                    📵
-                  </div>
-        
-                  <div class="ready-label">
-                    Phone Away
-                  </div>
-        
-                  <div class="ready-check">
-                    ✓
-                  </div>
-        
-                </div>
-        
-        
-              </div>
-        
-            </div>
+
+      <div class="ready-title">
+        10-Second Shop-Ready Check
+      </div>
+
+
+      <div class="ready-grid">
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            🥽
+          </div>
+
+          <div class="ready-label">
+            Glasses
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            👕
+          </div>
+
+          <div class="ready-label">
+            Shirt
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            👖
+          </div>
+
+          <div class="ready-label">
+            Pants
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            👟
+          </div>
+
+          <div class="ready-label">
+            Safety Shoes
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            🚫💍
+          </div>
+
+          <div class="ready-label">
+            Jewelry Off
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+        <div class="ready-item">
+
+          <div class="ready-icon">
+            📵
+          </div>
+
+          <div class="ready-label">
+            Phone Away
+          </div>
+
+          <div class="ready-check">
+            ✓
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
 
       </div>
 
@@ -1378,252 +1382,6 @@
         </button>
 
       </article>
-
-    </div>
-
-
-  </section>
-
-
-
-
-
-        <button
-          class="info-btn"
-          data-topic="pants"
-        >
-          ⓘ Why It Matters
-        </button>
-
-      </article>
-
-
-      <!-- HEADWEAR -->
-
-      <article class="card">
-
-        <div class="card-head">
-
-          <div class="card-icon">
-            🧢
-          </div>
-
-          <div class="card-title-wrap">
-
-            <h2>
-              Headwear
-            </h2>
-
-            <div class="card-tag">
-              Hats Permitted
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="card-body">
-
-          <ul>
-
-            <li>
-              Hats are permitted.
-            </li>
-
-            <li class="danger">
-              No bandannas.
-            </li>
-
-            <li>
-              Headwear may not interfere with PPE
-              or safe shop operation.
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <button
-          class="info-btn"
-          data-topic="headwear"
-        >
-          ⓘ Shop Expectation
-        </button>
-
-      </article>
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =======================================================
-       BOTTOM ROW
-  ======================================================== -->
-
-  <section class="bottom-row">
-
-
-    <!-- PHONE -->
-
-    <div class="phone-panel">
-
-      <div class="phone-stop">
-        📱
-      </div>
-
-
-      <div>
-
-        <div class="phone-title">
-
-          Your Phone:
-
-          <strong>
-            Put It Away.
-          </strong>
-
-        </div>
-
-
-        <div class="phone-copy">
-
-          Phones may only be used when authorized
-          by your instructor.
-
-        </div>
-
-      </div>
-
-
-      <button
-        class="phone-btn"
-        data-topic="phone"
-      >
-        Why?
-      </button>
-
-    </div>
-
-
-    <!-- SHOP READY CHECK -->
-
-    <div class="ready-panel">
-
-      <div class="ready-title">
-        10-Second Shop-Ready Check
-      </div>
-
-
-      <div class="ready-grid">
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            🥽
-          </div>
-
-          <div class="ready-label">
-            Glasses
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            👕
-          </div>
-
-          <div class="ready-label">
-            Shirt
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            👖
-          </div>
-
-          <div class="ready-label">
-            Pants
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            👟
-          </div>
-
-          <div class="ready-label">
-            Safety Shoes
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            🚫💍
-          </div>
-
-          <div class="ready-label">
-            Jewelry Off
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-        <div class="ready-item">
-
-          <div class="ready-icon">
-            📵
-          </div>
-
-          <div class="ready-label">
-            Phone Away
-          </div>
-
-          <div class="ready-check">
-            ✓
-          </div>
-
-        </div>
-
-
-      </div>
 
     </div>
 
